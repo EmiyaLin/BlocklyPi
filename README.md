@@ -15,7 +15,7 @@
 
 
 #### 实际使用
-详见 [http://hgccloud.firadio.net/tools/blocklypi/index.html](http://hgccloud.firadio.net/tools/blocklypi/index.html)
+详见 [http://hgccloud.firadio.net/tools/blocklypi/apps/blocklypi/index.html](http://hgccloud.firadio.net/tools/blocklypi/apps/blocklypi/index.html)
 ![输入图片说明](https://gitee.com/uploads/images/2018/0617/192441_def2fff9_906045.png "index.png")
 
 #### 特别说明
