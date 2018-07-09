@@ -13,6 +13,7 @@
   
   <script src="../../pt/inout.js"></script>
   <script src="../../pt/time.js"></script>
+  <script src="../../pt/console.js"></script>
   
   <script src="../../pt/factory.js"></script>
   
@@ -379,6 +380,23 @@
                <field name="NUM">1</field>
             </block>
          </value>
+      </block>
+    </category>
+    
+    <category name="控制台" colour="230">
+      <block type="console_print">
+        <value name="MESSAGE">
+          <block type="text">
+            <field name="TEXT">Hello world</field>
+          </block>
+        </value>
+      </block>
+      <block type="console_input">
+        <value name="MESSAGE">
+          <block type="text">
+            <field name="TEXT">Please enter the number:</field>
+          </block>
+        </value>
       </block>
     </category>
     
