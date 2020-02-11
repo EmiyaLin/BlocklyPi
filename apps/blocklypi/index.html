@@ -375,20 +375,20 @@
       <block type="inout_highlow"></block>
       <block type="inout_mode">
         <value name="PIN">
-          <block type="inout_pins"></block>
+          <shadow type="inout_pins"></shadow>
         </value>
       </block>
       <block type="inout_output">
         <value name="PIN">
-          <block type="inout_pins"></block>
+          <shadow type="inout_pins"></shadow>
         </value>
         <value name="STAT">
-          <block type="inout_highlow"></block>
+          <shadow type="inout_highlow"></shadow>
         </value>
       </block>
       <block type="inout_input">
         <value name="PIN">
-          <block type="inout_pins"></block>
+          <shadow type="inout_pins"></shadow>
         </value>
       </block>
     </category>
@@ -397,9 +397,9 @@
    	  <block type="time_init_time"></block>
       <block type="time_delay">
           <value name="DELAY_TIME">
-            <block type="math_number">
+            <shadow type="math_number">
                <field name="NUM">1</field>
-            </block>
+            </shadow>
          </value>
       </block>
     </category>
@@ -407,16 +407,16 @@
     <category name="控制台" colour="230">
       <block type="console_print">
         <value name="MESSAGE">
-          <block type="text">
+          <shadow type="text">
             <field name="TEXT">Hello world</field>
-          </block>
+          </shadow>
         </value>
       </block>
       <block type="console_input">
         <value name="MESSAGE">
-          <block type="text">
+          <shadow type="text">
             <field name="TEXT">Please enter the number:</field>
-          </block>
+          </shadow>
         </value>
       </block>
     </category>
