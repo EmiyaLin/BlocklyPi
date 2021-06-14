@@ -34,15 +34,3 @@ Blockly.Blocks.XXX = {
 Blockly.Python.XXX=function(){
    //Some Code...
 };
-
-
-```
-
-
-By 王逸伦&HGC
-
-----
-联系方式：
-QQ：594352301
-
-Mail：594352301@qq.com
