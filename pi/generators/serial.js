@@ -28,12 +28,12 @@ Blockly.Python.serial_close=function(){
 Blockly.Python.serial_read=function(){
 	var SER_OBJ=this.getFieldValue('SER_OBJ');
 	var SIZE=Blockly.Python.valueToCode(this,'SIZE',Blockly.Python.ORDER_ATOMIC);
-	return [SER_OBJ+".read("+SIZE+")\n",Blockly.Python.ORDER_ATOMIC];
+	return [SER_OBJ+".read("+SIZE+")",Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python.serial_readline=function(){
 	var SER_OBJ=this.getFieldValue('SER_OBJ');
-	return [SER_OBJ+".readline()\n",Blockly.Python.ORDER_ATOMIC];
+	return [SER_OBJ+".readline()",Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python.serial_write=function(){
