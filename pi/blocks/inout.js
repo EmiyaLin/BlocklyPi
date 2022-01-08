@@ -47,7 +47,7 @@ Blockly.Blocks.inout_output = {
     	this.appendValueInput("PIN",Number)
 			.appendField("数字输出 管脚#")
 			.setCheck("Number");
-		this.appendValueInput("STAT",Number)
+		this.appendValueInput("STAT",Boolean)
     		.appendField("设为")
 			.setCheck("Boolean");
     	this.setPreviousStatement(true);
