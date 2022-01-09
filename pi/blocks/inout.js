@@ -1,12 +1,3 @@
-Blockly.Blocks.inout_pins={
-	init:function(){
-		this.setColour(20);
-		this.appendDummyInput()
-			.appendField(new Blockly.FieldDropdown(profile.default.digital),"PIN");
-		this.setOutput(true,"Number");
-	}
-};
-
 Blockly.Blocks.inout_init_gpio={
 	init:function(){
 		this.setColour(20);
@@ -14,6 +5,15 @@ Blockly.Blocks.inout_init_gpio={
 			.appendField("初始化 RPi.GPIO as GPIO");
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
+	}
+};
+
+Blockly.Blocks.inout_pins={
+	init:function(){
+		this.setColour(20);
+		this.appendDummyInput()
+			.appendField(new Blockly.FieldDropdown(profile.default.digital),"PIN");
+		this.setOutput(true,"Number");
 	}
 };
 

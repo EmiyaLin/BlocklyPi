@@ -1,9 +1,9 @@
-Blockly.Python.inout_pins=function(){
-	return [this.getFieldValue("PIN"),Blockly.Python.ORDER_ATOMIC];
-};
-
 Blockly.Python.inout_init_gpio=function(){
 	return "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)\n";
+};
+
+Blockly.Python.inout_pins=function(){
+	return [this.getFieldValue("PIN"),Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python.inout_mode=function(){
