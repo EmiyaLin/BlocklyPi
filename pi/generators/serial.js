@@ -25,6 +25,16 @@ Blockly.Python.serial_close=function(){
 	return SER_OBJ+".close()\n";
 };
 
+Blockly.Python.serial_inwaiting=function(){
+	var SER_OBJ=this.getFieldValue('SER_OBJ');
+	return [SER_OBJ+".inWaiting()",Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python.serial_flushinput=function(){
+	var SER_OBJ=this.getFieldValue('SER_OBJ');
+	return SER_OBJ+".flushInput()\n";
+};
+
 Blockly.Python.serial_read=function(){
 	var SER_OBJ=this.getFieldValue('SER_OBJ');
 	var SIZE=Blockly.Python.valueToCode(this,'SIZE',Blockly.Python.ORDER_ATOMIC);

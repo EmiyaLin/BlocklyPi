@@ -65,6 +65,30 @@ Blockly.Blocks.serial_close={
     }
 };
 
+Blockly.Blocks.serial_inwaiting={
+    init:function(){
+	    this.setColour(65);
+	    this.appendDummyInput()
+            .appendField("串口")
+            .appendField(new Blockly.FieldTextInput('ser'),'SER_OBJ')
+            .appendField("缓存区中的字节数");
+        this.setOutput(true,"Number");
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.serial_flushinput={
+    init:function(){
+	    this.setColour(65);
+	    this.appendDummyInput()
+            .appendField("串口")
+            .appendField(new Blockly.FieldTextInput('ser'),'SER_OBJ')
+            .appendField("清空缓冲区");
+        this.setPreviousStatement(true);
+	    this.setNextStatement(true);
+    }
+};
+
 Blockly.Blocks.serial_read={
     init:function(){
 	    this.setColour(65);
