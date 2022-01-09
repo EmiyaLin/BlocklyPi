@@ -14,8 +14,7 @@ var Code = {};
  * Lookup for names of supported languages.  Keys should be in ISO 639 format.
  */
 Code.LANGUAGE_NAME = {
-  'zh-hans': '简体中文',
-  'zh-hant': '正體中文'
+  'zh-hans': '简体中文'
 };
 
 /**
