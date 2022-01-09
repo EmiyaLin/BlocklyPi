@@ -4,7 +4,7 @@ Blockly.Python.factory_do=function(){
 
 Blockly.Python.factory_import=function(){
 	var INCLUDE=this.getFieldValue('INCLUDE');
-	return 'import '+INCLUDE+'\n';
+	Blockly.Python.definitions_['import '+INCLUDE]='import '+INCLUDE;
 };
 
 Blockly.Python.factory_return=function(){
