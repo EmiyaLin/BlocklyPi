@@ -394,7 +394,6 @@
         </value>
       </block>
     </category>
-    
     <category name="延时" colour="120">
    	  <block type="time_init_time"></block>
       <block type="time_delay">
@@ -405,7 +404,6 @@
          </value>
       </block>
     </category>
-    
     <category name="控制台" colour="230">
       <block type="console_print">
         <value name="MESSAGE">
@@ -418,6 +416,27 @@
         <value name="MESSAGE">
           <shadow type="text">
             <field name="TEXT">Please enter the text:</field>
+          </shadow>
+        </value>
+      </block>
+    </category>
+    <category name="文件系统" colour="0">
+      <block type="file_read">
+        <value name="PATH">
+          <shadow type="text">
+            <field name="TEXT">./file.txt</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="file_write">
+        <value name="PATH">
+          <shadow type="text">
+            <field name="TEXT">./file.txt</field>
+          </shadow>
+        </value>
+        <value name="CONTENT">
+          <shadow type="text">
+            <field name="TEXT">Hello world</field>
           </shadow>
         </value>
       </block>

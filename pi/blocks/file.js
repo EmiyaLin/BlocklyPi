@@ -1,0 +1,22 @@
+Blockly.Blocks.file_read={
+    init:function(){
+        this.setColour(0);
+        this.appendValueInput("PATH",String)
+			.appendField("读取文件")
+            .setCheck("String");
+        this.setOutput(true,"String");
+    }
+};
+
+Blockly.Blocks.file_write={
+    init:function(){
+        this.setColour(0);
+        this.appendValueInput("PATH",String)
+			.appendField("写入文件")
+            .setCheck("String");
+        this.appendValueInput("CONTENT",String)
+            .appendField("内容");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    }
+};
