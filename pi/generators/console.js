@@ -5,5 +5,5 @@ Blockly.Python.console_print=function(){
 
 Blockly.Python.console_input=function(){
     var message=Blockly.Python.valueToCode(this,'MESSAGE',Blockly.Python.ORDER_ATOMIC)||'1';
-    return ['input('+ message+')',Blockly.Python.ORDER_ATOMIC];
+    return ['raw_input('+ message+')',Blockly.Python.ORDER_ATOMIC];
 };
