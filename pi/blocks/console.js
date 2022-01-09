@@ -12,8 +12,10 @@ Blockly.Blocks.console_print={
 Blockly.Blocks.console_input={
     init:function(){
         this.setColour(230);
+        this.appendDummyInput()
+            .appendField("控制台 输入");
         this.appendValueInput("MESSAGE")
-            .appendField("控制台 输入 提示信息");
+            .appendField("提示信息");
         this.setOutput(true);
         this.setInputsInline(false);
     }
