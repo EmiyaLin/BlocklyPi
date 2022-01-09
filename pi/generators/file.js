@@ -28,5 +28,5 @@ Blockly.Python.file_exists=function(){
 Blockly.Python.file_remove=function(){
     Blockly.Python.definitions_['import os'] = 'import os';
     var path=Blockly.Python.valueToCode(this,'PATH',Blockly.Python.ORDER_ATOMIC);
-	return "os.remove("+path+")";
+	return "os.remove("+path+")\n";
 };
