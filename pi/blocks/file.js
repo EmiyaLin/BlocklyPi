@@ -21,7 +21,7 @@ Blockly.Blocks.file_write={
     }
 };
 
-Blockly.Blocks.file_exists={
+Blockly.Blocks.file_isfile={
     init:function(){
         this.setColour(0);
         this.appendValueInput("PATH",String)
@@ -39,6 +39,54 @@ Blockly.Blocks.file_remove={
         this.setColour(0);
         this.appendValueInput("PATH",String)
 			.appendField("删除文件")
+            .setCheck("String");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    }
+};
+
+Blockly.Blocks.file_listdir={
+    init:function(){
+        this.setColour(0);
+        this.appendValueInput("PATH",String)
+			.appendField("遍历目录")
+            .setCheck("String");
+        this.appendDummyInput("")
+            .appendField("下的所有文件并生成列表")
+        this.setOutput(true,"Array");
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.file_mkdir={
+    init:function(){
+        this.setColour(0);
+        this.appendValueInput("PATH",String)
+			.appendField("创建目录")
+            .setCheck("String");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    }
+};
+
+Blockly.Blocks.file_isdir={
+    init:function(){
+        this.setColour(0);
+        this.appendValueInput("PATH",String)
+			.appendField("目录")
+            .setCheck("String");
+        this.appendDummyInput("")
+            .appendField("是否存在？")
+        this.setOutput(true,"Boolean");
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.file_rmdir={
+    init:function(){
+        this.setColour(0);
+        this.appendValueInput("PATH",String)
+			.appendField("删除目录")
             .setCheck("String");
         this.setPreviousStatement(true);
         this.setNextStatement(true);

@@ -440,7 +440,7 @@
           </shadow>
         </value>
       </block>
-      <block type="file_exists">
+      <block type="file_isfile">
         <value name="PATH">
           <shadow type="text">
             <field name="TEXT">./file.txt</field>
@@ -451,6 +451,34 @@
         <value name="PATH">
           <shadow type="text">
             <field name="TEXT">./file.txt</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="file_listdir">
+        <value name="PATH">
+          <shadow type="text">
+            <field name="TEXT">./folder</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="file_mkdir">
+        <value name="PATH">
+          <shadow type="text">
+            <field name="TEXT">./folder</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="file_isdir">
+        <value name="PATH">
+          <shadow type="text">
+            <field name="TEXT">./folder</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="file_rmdir">
+        <value name="PATH">
+          <shadow type="text">
+            <field name="TEXT">./folder</field>
           </shadow>
         </value>
       </block>

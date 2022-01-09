@@ -19,14 +19,38 @@ Blockly.Python.file_write=function(){
 	return functionName+"("+path+","+content+")\n";
 };
 
-Blockly.Python.file_exists=function(){
+Blockly.Python.file_isfile=function(){
     Blockly.Python.definitions_['import os'] = 'import os';
     var path=Blockly.Python.valueToCode(this,'PATH',Blockly.Python.ORDER_ATOMIC);
-	return ["os.path.exists("+path+")",Blockly.Python.ORDER_ATOMIC];
+	return ["os.path.isfile("+path+")",Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python.file_remove=function(){
     Blockly.Python.definitions_['import os'] = 'import os';
     var path=Blockly.Python.valueToCode(this,'PATH',Blockly.Python.ORDER_ATOMIC);
 	return "os.remove("+path+")\n";
+};
+
+Blockly.Python.file_listdir=function(){
+    Blockly.Python.definitions_['import os'] = 'import os';
+    var path=Blockly.Python.valueToCode(this,'PATH',Blockly.Python.ORDER_ATOMIC);
+	return ["os.listdir("+path+")",Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python.file_mkdir=function(){
+    Blockly.Python.definitions_['import os'] = 'import os';
+    var path=Blockly.Python.valueToCode(this,'PATH',Blockly.Python.ORDER_ATOMIC);
+	return "os.mkdir("+path+")\n";
+};
+
+Blockly.Python.file_isdir=function(){
+    Blockly.Python.definitions_['import os'] = 'import os';
+    var path=Blockly.Python.valueToCode(this,'PATH',Blockly.Python.ORDER_ATOMIC);
+	return ["os.isdir("+path+")",Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python.file_rmdir=function(){
+    Blockly.Python.definitions_['import shutil'] = 'import shutil';
+    var path=Blockly.Python.valueToCode(this,'PATH',Blockly.Python.ORDER_ATOMIC);
+	return "shutil.rmtree("+path+")\n";
 };
