@@ -19,7 +19,7 @@
 
 #### 实际使用
 详见 [http://hgcserver.gitee.io/blocklypi/apps/blocklypi/index.html](http://hgcserver.gitee.io/blocklypi/apps/blocklypi/index.html)
-![PIC1](https://images.gitee.com/uploads/images/2020/0208/201756_da8b1bc5_906045.png "pic1.png")
+![PIC1](pic1.png)
 ![PIC2](https://images.gitee.com/uploads/images/2020/0208/202147_cf061780_906045.png "pic2.png")
 
 
