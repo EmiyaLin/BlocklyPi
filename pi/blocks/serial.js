@@ -83,7 +83,7 @@ Blockly.Blocks.serial_flushinput={
 	    this.appendDummyInput()
             .appendField("串口")
             .appendField(new Blockly.FieldTextInput('ser'),'SER_OBJ')
-            .appendField("清空缓冲区");
+            .appendField("清空缓存区");
         this.setPreviousStatement(true);
 	    this.setNextStatement(true);
     }
