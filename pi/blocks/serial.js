@@ -1,13 +1,3 @@
-Blockly.Blocks.serial_init_serial={
-    init:function(){
-	    this.setColour(65);
-	    this.appendDummyInput()
-	    	.appendField("初始化 serial");
-	    this.setPreviousStatement(true);
-	    this.setNextStatement(true);
-    }
-};
-
 Blockly.Blocks.serial_init={
     init:function(){
 	    this.setColour(65);
