@@ -19,9 +19,8 @@
 
 #### 实际使用
 详见 [http://hgcserver.gitee.io/blocklypi/apps/blocklypi/index.html](http://hgcserver.gitee.io/blocklypi/apps/blocklypi/index.html)
-![PIC1](pic1.png)
-![PIC2](https://images.gitee.com/uploads/images/2020/0208/202147_cf061780_906045.png "pic2.png")
-
+![PIC1](images/pic1.png)
+![PIC2](images/pic2.png)
 
 #### 特别说明
 本版本为BlocklyPi beta版本，对第一代进行了重写，抛弃了Wiringpi而使用Python，功能相比于第一代更为强大，但是仍可能存在许多不足(可能在编写时没有发现)，如在使用过程中产生问题，请及时在issues中指出。
