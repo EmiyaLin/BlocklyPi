@@ -11,7 +11,10 @@
 
 见项目 `apps/blocklypi/index.html` 地址
 
+进行串口通信时需要先执行sudo apt-get install python-serial安装相应的扩展包
+
 更多说明详见Blockly
+
 
 
 #### 实际使用
