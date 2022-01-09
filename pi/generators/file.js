@@ -18,3 +18,15 @@ Blockly.Python.file_write=function(){
     var content=Blockly.Python.valueToCode(this,'CONTENT',Blockly.Python.ORDER_ATOMIC);
 	return functionName+"("+path+","+content+")\n";
 };
+
+Blockly.Python.file_exists=function(){
+    Blockly.Python.definitions_['import os'] = 'import os';
+    var path=Blockly.Python.valueToCode(this,'PATH',Blockly.Python.ORDER_ATOMIC);
+	return "os.path.exists("+path+")";
+};
+
+Blockly.Python.file_remove=function(){
+    Blockly.Python.definitions_['import os'] = 'import os';
+    var path=Blockly.Python.valueToCode(this,'PATH',Blockly.Python.ORDER_ATOMIC);
+	return "os.remove("+path+")";
+};

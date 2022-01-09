@@ -20,3 +20,27 @@ Blockly.Blocks.file_write={
         this.setNextStatement(true);
     }
 };
+
+Blockly.Blocks.file_exists={
+    init:function(){
+        this.setColour(0);
+        this.appendValueInput("PATH",String)
+			.appendField("文件")
+            .setCheck("String");
+        this.appendDummyInput("")
+            .appendField("是否存在？")
+        this.setOutput(true,"Boolean");
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.file_remove={
+    init:function(){
+        this.setColour(0);
+        this.appendValueInput("PATH",String)
+			.appendField("删除文件")
+            .setCheck("String");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    }
+};
