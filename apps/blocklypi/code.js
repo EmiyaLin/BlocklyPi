@@ -358,6 +358,8 @@ Code.init = function() {
             wheel: true}
       });
 
+  load_blocks();
+  
   Code.loadBlocks('');
 
   if ('BlocklyStorage' in window) {

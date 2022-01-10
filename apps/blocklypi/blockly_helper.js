@@ -51,6 +51,15 @@ function save() {
 /**
  * Load blocks from local file.
  */
+function load_blocks() {
+  // Init load event.
+  var loadInput = document.getElementById('load');
+  loadInput.addEventListener('change', load, false);
+  document.getElementById('fakeload').onclick = function() {
+    loadInput.click();
+  };
+}
+
 function load(event) {
   var files = event.target.files;
   // Only allow uploading one file.
