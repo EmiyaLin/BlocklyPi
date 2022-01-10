@@ -25,7 +25,7 @@ Blockly.Blocks.pwm_start={
 			.appendField("启用PWM对象")
             .appendField(new Blockly.FieldTextInput('pwm'),'PWM_OBJ');
         this.appendValueInput("DUTY", Number)
-			.appendField(" 占空比")
+			.appendField("占空比")
             .setCheck("Number");
         this.appendDummyInput("")
 			.appendField("%");
@@ -42,7 +42,7 @@ Blockly.Blocks.pwm_freq={
 			.appendField("设置PWM对象")
 			.appendField(new Blockly.FieldTextInput('pwm'),'PWM_OBJ');
 		this.appendValueInput("FREQ", Number)
-			.appendField(" 频率")
+			.appendField("频率")
 			.setCheck("Number");
 		this.appendDummyInput("")
 			.appendField("Hz");
@@ -59,7 +59,7 @@ Blockly.Blocks.pwm_duty={
 			.appendField("设置PWM对象")
 			.appendField(new Blockly.FieldTextInput('pwm'),'PWM_OBJ');
 		this.appendValueInput("DUTY", Number)
-			.appendField(" 占空比")
+			.appendField("占空比")
 			.setCheck("Number");
 		this.appendDummyInput("")
 			.appendField("%");
