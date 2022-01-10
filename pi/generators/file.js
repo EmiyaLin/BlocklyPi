@@ -46,7 +46,7 @@ Blockly.Python.file_mkdir=function(){
 Blockly.Python.file_isdir=function(){
     Blockly.Python.definitions_['import os'] = 'import os';
     var path=Blockly.Python.valueToCode(this,'PATH',Blockly.Python.ORDER_ATOMIC);
-	return ["os.isdir("+path+")",Blockly.Python.ORDER_ATOMIC];
+	return ["os.path.isdir("+path+")",Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python.file_rmdir=function(){
