@@ -35,6 +35,18 @@ Blockly.Blocks.pwm_start={
 	}
 };
 
+Blockly.Blocks.pwm_stop={
+	init:function(){
+		this.setColour(45);
+		this.appendDummyInput("")
+			.appendField("停用PWM对象")
+			.appendField(new Blockly.FieldTextInput('pwm'),'PWM_OBJ');
+		this.setPreviousStatement(true);
+		this.setNextStatement(true);
+		this.setInputsInline(true);
+	}
+};
+
 Blockly.Blocks.pwm_freq={
 	init:function(){
 		this.setColour(45);
@@ -63,18 +75,6 @@ Blockly.Blocks.pwm_duty={
 			.setCheck("Number");
 		this.appendDummyInput("")
 			.appendField("%");
-		this.setPreviousStatement(true);
-		this.setNextStatement(true);
-		this.setInputsInline(true);
-	}
-};
-
-Blockly.Blocks.pwm_stop={
-	init:function(){
-		this.setColour(45);
-		this.appendDummyInput("")
-			.appendField("停用PWM对象")
-			.appendField(new Blockly.FieldTextInput('pwm'),'PWM_OBJ');
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
 		this.setInputsInline(true);

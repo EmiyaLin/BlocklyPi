@@ -14,6 +14,12 @@ Blockly.Python.pwm_start=function(){
 	return pwm_obj+".start("+duty+")\n";
 };
 
+Blockly.Python.pwm_stop=function(){
+    Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
+    var pwm_obj=this.getFieldValue('PWM_OBJ');
+	return pwm_obj+".stop()\n";
+};
+
 Blockly.Python.pwm_freq=function(){
     Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
     var pwm_obj=this.getFieldValue('PWM_OBJ');
@@ -28,10 +34,4 @@ Blockly.Python.pwm_duty=function(){
     var pin=Blockly.Python.valueToCode(this,'PIN',Blockly.Python.ORDER_ATOMIC);
     var duty=Blockly.Python.valueToCode(this,'DUTY',Blockly.Python.ORDER_ATOMIC);
 	return pwm_obj+".ChangeDutyCycle("+duty+")\n";
-};
-
-Blockly.Python.pwm_stop=function(){
-    Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
-    var pwm_obj=this.getFieldValue('PWM_OBJ');
-	return pwm_obj+".stop()\n";
 };
