@@ -12,6 +12,7 @@
 见项目 `apps/blocklypi/index.html` 地址
 
 进行串口通信时需要先执行sudo apt-get install python-serial安装相应的扩展包
+
 使用显示器LCD1602模块时需要开启iic功能并执行sudo apt-get install python-smbus安装相应的扩展包，LCD1602的驱动库在python_libraries/lcd1602目录下
 
 更多说明详见Blockly
