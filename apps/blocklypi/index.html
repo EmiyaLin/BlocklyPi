@@ -13,6 +13,7 @@
   
   <!--Pi blocks Lib-->
   <script src="../../pi/blocks/inout.js"></script>
+  <script src="../../pi/blocks/pwm.js"></script>
   <script src="../../pi/blocks/time.js"></script>
   <script src="../../pi/blocks/console.js"></script>
   <script src="../../pi/blocks/file.js"></script>
@@ -21,6 +22,7 @@
   <script src="../../pi/blocks/factory.js"></script>
   <!--Pi generators Lib-->
   <script src="../../pi/generators/inout.js"></script>
+  <script src="../../pi/generators/pwm.js"></script>
   <script src="../../pi/generators/time.js"></script>
   <script src="../../pi/generators/console.js"></script>
   <script src="../../pi/generators/file.js"></script>
@@ -398,6 +400,40 @@
           <shadow type="inout_pins"></shadow>
         </value>
       </block>
+    </category>
+    <category name="PWM" colour="45">
+      <block type="pwm_init">
+        <value name="PIN">
+          <shadow type="inout_pins"></shadow>
+        </value>
+        <value name="FREQ">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="pwm_start">
+        <value name="DUTY">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="pwm_freq">
+        <value name="FREQ">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="pwm_duty">
+        <value name="DUTY">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="pwm_stop"></block>
     </category>
     <category name="延时" colour="120">
       <block type="time_delay">
