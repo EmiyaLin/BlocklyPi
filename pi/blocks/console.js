@@ -5,7 +5,7 @@ Blockly.Blocks.console_print={
             .appendField("控制台 输出");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setInputsInline(false);
+        this.setInputsInline(true);
     }
 };
 
