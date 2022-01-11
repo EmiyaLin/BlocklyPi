@@ -7,13 +7,16 @@ Blockly.Blocks.serial_init={
             .appendField("初始化");
         this.appendValueInput("DEV_FILE")
             .appendField("设备")
-            .setCheck("String");
+            .setCheck("String")
+            .setAlign(Blockly.ALIGN_RIGHT);
         this.appendValueInput("BAUD")
             .appendField("波特率")
-            .setCheck("Number");
+            .setCheck("Number")
+            .setAlign(Blockly.ALIGN_RIGHT);
         this.appendValueInput("TIMEOUT")
             .appendField("超时")
-            .setCheck("Number");
+            .setCheck("Number")
+            .setAlign(Blockly.ALIGN_RIGHT);
         this.setPreviousStatement(true);
 	    this.setNextStatement(true);
     }

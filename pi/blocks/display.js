@@ -33,10 +33,12 @@ Blockly.Blocks.display_printline_lcd1602={
             .appendField("显示器LCD1602");
         this.appendValueInput("STR1",String)
 			.appendField("打印在第1行")
-            .setCheck("String");
+            .setCheck("String")
+            .setAlign(Blockly.ALIGN_RIGHT);
         this.appendValueInput("STR2",String)
 			.appendField("打印在第2行")
-			.setCheck("String");
+			.setCheck("String")
+            .setAlign(Blockly.ALIGN_RIGHT);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
     }

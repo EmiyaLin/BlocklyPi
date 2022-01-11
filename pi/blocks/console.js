@@ -13,9 +13,11 @@ Blockly.Blocks.console_input={
     init:function(){
         this.setColour(230);
         this.appendDummyInput()
-            .appendField("控制台 输入");
+            .appendField("控制台 输入")
+            .setAlign(Blockly.ALIGN_RIGHT);
         this.appendValueInput("MESSAGE")
-            .appendField("提示信息");
+            .appendField("提示信息")
+            .setAlign(Blockly.ALIGN_RIGHT);
         this.setOutput(true);
         this.setInputsInline(false);
     }

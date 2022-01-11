@@ -13,9 +13,11 @@ Blockly.Blocks.file_write={
         this.setColour(0);
         this.appendValueInput("PATH",String)
 			.appendField("写入文件")
-            .setCheck("String");
+            .setCheck("String")
+            .setAlign(Blockly.ALIGN_RIGHT);
         this.appendValueInput("CONTENT",String)
-            .appendField("内容");
+            .appendField("内容")
+            .setAlign(Blockly.ALIGN_RIGHT);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
     }
