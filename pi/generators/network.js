@@ -7,7 +7,7 @@ Blockly.Python.network_get=function(){
 Blockly.Python.network_getout=function(){
     Blockly.Python.definitions_['import urllib2'] = 'import urllib2';
     var url=Blockly.Python.valueToCode(this,'URL',Blockly.Python.ORDER_ATOMIC);
-	return ["urllib2.urlopen(urllib2.Request("+url+"))",Blockly.Python.ORDER_ATOMIC];
+	return ["urllib2.urlopen(urllib2.Request("+url+")).read()",Blockly.Python.ORDER_ATOMIC];
 };
 
 Blockly.Python.network_tcp_init=function(){
