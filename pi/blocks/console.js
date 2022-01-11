@@ -42,6 +42,6 @@ Blockly.Blocks.console_shellout={
         this.appendDummyInput("")
             .appendField("并获得输出")
         this.setOutput(true);
-        this.setInputsInline(false);
+        this.setInputsInline(true);
     }
 };
