@@ -20,3 +20,28 @@ Blockly.Blocks.console_input={
         this.setInputsInline(false);
     }
 };
+
+Blockly.Blocks.console_shell={
+    init:function(){
+        this.setColour(230);
+        this.appendValueInput("SHELL")
+            .appendField("控制台 执行shell",String)
+            .setCheck("String");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.console_shellout={
+    init:function(){
+        this.setColour(230);
+        this.appendValueInput("SHELL")
+            .appendField("控制台 执行shell",String)
+            .setCheck("String");
+        this.appendDummyInput("")
+            .appendField("并获得输出")
+        this.setOutput(true);
+        this.setInputsInline(false);
+    }
+};
