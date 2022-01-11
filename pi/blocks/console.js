@@ -40,7 +40,7 @@ Blockly.Blocks.console_shellout={
             .appendField("控制台 执行shell",String)
             .setCheck("String");
         this.appendDummyInput("")
-            .appendField("并获得输出")
+            .appendField("并获得输出");
         this.setOutput(true);
         this.setInputsInline(true);
     }
