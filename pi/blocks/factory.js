@@ -3,7 +3,7 @@ Blockly.Blocks.factory_import={
         this.setColour(75);
         this.appendDummyInput("")
             .appendField("import ")
-            .appendField(new Blockly.FieldTextInput('time'), 'INCLUDE');
+            .appendField(new Blockly.FieldTextInput('time'), 'IMPORT');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
     }

@@ -1,6 +1,6 @@
 Blockly.Python.factory_import=function(){
-	var INCLUDE=this.getFieldValue('INCLUDE');
-	return 'import '+INCLUDE;
+	var IMPORT=this.getFieldValue('IMPORT');
+	return 'import '+IMPORT;
 };
 
 Blockly.Python.factory_do=function(){
