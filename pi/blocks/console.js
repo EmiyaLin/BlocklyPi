@@ -2,7 +2,8 @@ Blockly.Blocks.console_print={
     init:function(){
         this.setColour(230);
         this.appendValueInput("MESSAGE")
-            .appendField("控制台 输出");
+            .appendField("控制台 输出",String)
+            .setCheck("String");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setInputsInline(false);
@@ -15,7 +16,8 @@ Blockly.Blocks.console_input={
         this.appendDummyInput()
             .appendField("控制台 输入");
         this.appendValueInput("MESSAGE")
-            .appendField("提示信息");
+            .appendField("提示信息",String)
+            .setCheck("String");
         this.setOutput(true);
         this.setInputsInline(false);
     }

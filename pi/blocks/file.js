@@ -15,7 +15,8 @@ Blockly.Blocks.file_write={
 			.appendField("写入文件")
             .setCheck("String");
         this.appendValueInput("CONTENT",String)
-            .appendField("内容");
+            .appendField("内容")
+            .setCheck("String");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
     }
