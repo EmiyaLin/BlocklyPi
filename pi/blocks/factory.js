@@ -19,6 +19,18 @@ Blockly.Blocks.factory_do={
     }
 };
 
+Blockly.Blocks.factory_block={
+    init:function(){
+        this.setColour(75);
+        this.appendDummyInput("")
+            .appendField(new Blockly.FieldTextInput('def func()'),'VALUE')
+            .appendField(":");
+        this.appendStatementInput('DO');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    }
+};
+
 Blockly.Blocks.factory_return={
     init:function(){
         this.setColour(75);
