@@ -1,3 +1,24 @@
+Blockly.Blocks.utils_now={
+    init:function(){
+        this.setColour(75);
+        this.appendDummyInput()
+            .appendField("当前")
+            .appendField(new Blockly.FieldDropdown([["年","year"],["月","month"],["日","day"],["时","hour"],["分","minute"],["秒","second"]]),"MODE");
+        this.setOutput(true,"Number");
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.utils_time={
+    init:function(){
+        this.setColour(75);
+        this.appendDummyInput()
+            .appendField("当前系统时间戳");
+        this.setOutput(true,"Number");
+        this.setInputsInline(true);
+    }
+};
+
 Blockly.Blocks.utils_break={
     init:function(){
         this.setColour(75);

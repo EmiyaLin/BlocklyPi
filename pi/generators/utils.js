@@ -1,3 +1,14 @@
+Blockly.Python.utils_now=function(){
+    Blockly.Python.definitions_['import datetime'] = 'import datetime';
+    var mode=this.getFieldValue("MODE");
+    return ['datetime.datetime.now().'+mode,Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python.utils_time=function(){
+    Blockly.Python.definitions_['import time'] = 'import time';
+    return ['time.time()',Blockly.Python.ORDER_ATOMIC];
+};
+
 Blockly.Python.utils_break=function(){
     return ["'\\n'",Blockly.Python.ORDER_ATOMIC];
 };
