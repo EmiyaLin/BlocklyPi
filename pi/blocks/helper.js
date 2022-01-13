@@ -1,4 +1,4 @@
-Blockly.Blocks.helper_break={
+Blockly.Blocks.utils_break={
     init:function(){
         this.setColour(75);
 		this.appendDummyInput()
@@ -7,7 +7,7 @@ Blockly.Blocks.helper_break={
     }
 };
 
-Blockly.Blocks.helper_int={
+Blockly.Blocks.utils_int={
     init:function(){
         this.setColour(75);
         this.appendValueInput("INPUT")
@@ -16,7 +16,7 @@ Blockly.Blocks.helper_int={
     }
 };
 
-Blockly.Blocks.helper_long={
+Blockly.Blocks.utils_long={
     init:function(){
         this.setColour(75);
         this.appendValueInput("INPUT")
@@ -25,7 +25,7 @@ Blockly.Blocks.helper_long={
     }
 };
 
-Blockly.Blocks.helper_float={
+Blockly.Blocks.utils_float={
     init:function(){
         this.setColour(75);
         this.appendValueInput("INPUT")
@@ -34,7 +34,7 @@ Blockly.Blocks.helper_float={
     }
 };
 
-Blockly.Blocks.helper_str={
+Blockly.Blocks.utils_str={
     init:function(){
         this.setColour(75);
         this.appendValueInput("INPUT")
