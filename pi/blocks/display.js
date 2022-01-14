@@ -2,7 +2,7 @@ Blockly.Blocks.display_init_lcd1602={
     init:function(){
         this.setColour(180);
         this.appendDummyInput("")
-            .appendField("初始化 显示器LCD1602");
+            .appendField("显示器LCD1602 初始化");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
     }
