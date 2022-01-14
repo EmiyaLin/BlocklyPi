@@ -25,7 +25,7 @@ Blockly.Blocks.device_stepper_init={
     }
 };
 
-Blockly.Blocks.device_stepper_move={
+Blockly.Blocks.device_stepper_step={
     init:function(){
         this.setColour(100);
         this.appendDummyInput("")

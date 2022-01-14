@@ -11,7 +11,7 @@ Blockly.Python.device_stepper_init=function(){
     return STEPPER_OBJ+"=Stepper("+steps+","+pin1+","+pin2+","+pin3+","+pin4+")\n"+STEPPER_OBJ+".setSpeed("+speed+")\n";
 };
 
-Blockly.Python.device_stepper_move=function(){
+Blockly.Python.device_stepper_step=function(){
     Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
     Blockly.Python.definitions_['from stepper import Stepper'] = 'from stepper import Stepper';
     var STEPPER_OBJ=this.getFieldValue('STEPPER_OBJ');
