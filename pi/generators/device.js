@@ -18,3 +18,20 @@ Blockly.Python.device_stepper_step=function(){
     var steps=Blockly.Python.valueToCode(this,'STEPS',Blockly.Python.ORDER_ATOMIC)||1;
     return STEPPER_OBJ+".step("+steps+")\n";
 };
+
+Blockly.Python.device_beep=function(){
+    Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
+    Blockly.Python.definitions_['import time'] = 'import time';
+    const functionName=Blockly.Python.provideFunction_('beep',[
+        'def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(pin,f,t):',
+        '  GPIO.setup(pin,GPIO.OUT)',
+        '  pwm=GPIO.PWM(pin,f)',
+        '  pwm.start(50)',
+        '  time.sleep(t)',
+        '  pwm.stop()'
+    ]);
+    var pin=Blockly.Python.valueToCode(this,'PIN',Blockly.Python.ORDER_ATOMIC)||1;
+    var freq=Blockly.Python.valueToCode(this,'FREQ',Blockly.Python.ORDER_ATOMIC)||1;
+    var time=Blockly.Python.valueToCode(this,'TIME',Blockly.Python.ORDER_ATOMIC)||1;
+    return functionName+"("+pin+","+freq+","+time+")\n";
+};

@@ -33,8 +33,27 @@ Blockly.Blocks.device_stepper_step={
             .appendField(new Blockly.FieldTextInput('stepper'),'STEPPER_OBJ');
         this.appendValueInput("STEPS")
             .appendField("移动步数",Number)
-            .setCheck("Number")
-            .setAlign(Blockly.ALIGN_RIGHT);
+            .setCheck("Number");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.device_beep={
+    init:function(){
+        this.setColour(100);
+        this.appendValueInput("PIN")
+            .appendField("播放声音 管脚#",Number)
+            .setCheck("Number");
+        this.appendValueInput("FREQ")
+            .appendField("频率",Number)
+            .setCheck("Number");
+        this.appendValueInput("TIME")
+            .appendField("Hz 持续时间",Number)
+            .setCheck("Number");
+        this.appendDummyInput("")
+            .appendField("秒")
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setInputsInline(true);
