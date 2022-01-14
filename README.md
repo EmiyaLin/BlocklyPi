@@ -15,6 +15,8 @@
 
 使用显示器LCD1602模块时需要开启iic功能并执行sudo apt-get install python-smbus安装相应的扩展包，LCD1602的驱动库在python_libraries/lcd1602目录下
 
+步进电机的驱动库在python_libraries/stepper目录下
+
 更多说明详见Blockly
 
 
