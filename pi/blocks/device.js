@@ -53,7 +53,7 @@ Blockly.Blocks.device_beep={
             .appendField("Hz 持续时间",Number)
             .setCheck("Number");
         this.appendDummyInput("")
-            .appendField("秒")
+            .appendField("秒");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setInputsInline(true);
