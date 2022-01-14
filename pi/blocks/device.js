@@ -7,7 +7,7 @@ Blockly.Blocks.device_stepper_init={
             .appendField("初始化");
         for(let i=1;i<=4;i++){
             this.appendValueInput("PIN"+i)
-                .appendField("管脚#"+i,Number)
+                .appendField("管脚"+i+"#",Number)
                 .setCheck("Number")
                 .setAlign(Blockly.ALIGN_RIGHT);
         };
