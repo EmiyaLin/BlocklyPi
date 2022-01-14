@@ -20,6 +20,7 @@
   <script src="../../pi/blocks/network.js"></script>
   <script src="../../pi/blocks/serial.js"></script>
   <script src="../../pi/blocks/display.js"></script>
+  <script src="../../pi/blocks/device.js"></script>
   <script src="../../pi/blocks/utils.js"></script>
   <script src="../../pi/blocks/factory.js"></script>
   <!--Pi generators Lib-->
@@ -31,6 +32,7 @@
   <script src="../../pi/generators/network.js"></script>
   <script src="../../pi/generators/serial.js"></script>
   <script src="../../pi/generators/display.js"></script>
+  <script src="../../pi/generators/device.js"></script>
   <script src="../../pi/generators/utils.js"></script>
   <script src="../../pi/generators/factory.js"></script>
 
@@ -669,6 +671,47 @@
           </value>
         </block>
         <block type="display_clear_lcd1602"></block>
+    </category>
+    <category name="外部设备" colour="100">
+      <block type="device_stepper_init">
+        <value name="PIN1">
+          <block type="inout_pins">
+            <field name="PIN">31</field>
+          </block>
+        </value>
+        <value name="PIN2">
+          <block type="inout_pins">
+            <field name="PIN">33</field>
+          </block>
+        </value>
+        <value name="PIN3">
+          <block type="inout_pins">
+            <field name="PIN">35</field>
+          </block>
+        </value>
+        <value name="PIN4">
+          <block type="inout_pins">
+            <field name="PIN">37</field>
+          </block>
+        </value>
+        <value name="STEPS">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <value name="SPEED">
+          <block type="math_number">
+            <field name="NUM">50</field>
+          </block>
+        </value>
+      </block>
+      <block type="device_stepper_move">
+        <value name="STEPS">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
     </category>
     
     <sep></sep>
