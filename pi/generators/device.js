@@ -42,6 +42,14 @@ Blockly.Python.device_hcsr04_distance=function(){
     return [functionName+"("+trig+","+echo+")",Blockly.Python.ORDER_ATOMIC];
 };
 
+Blockly.Python.device_dht11=function(){
+    Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
+    Blockly.Python.definitions_['import dht11'] = 'import dht11';
+    var pin=Blockly.Python.valueToCode(this,'PIN',Blockly.Python.ORDER_ATOMIC)||1;
+    var mode=this.getFieldValue("MODE");
+    return ["dht11.get"+mode+"("+pin+")",Blockly.Python.ORDER_ATOMIC];
+};
+
 Blockly.Python.device_beep=function(){
     Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
     Blockly.Python.definitions_['import time'] = 'import time';
