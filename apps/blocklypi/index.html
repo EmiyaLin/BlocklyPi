@@ -673,6 +673,13 @@
         <block type="display_clear_lcd1602"></block>
     </category>
     <category name="外部设备" colour="100">
+      <block type="device_dht11">
+        <value name="PIN">
+          <shadow type="inout_pins">
+            <field name="PIN">7</field>
+          </shadow>
+        </value>
+      </block>
       <block type="device_hcsr04_distance">
         <value name="TRIG">
           <shadow type="inout_pins">
@@ -682,13 +689,6 @@
         <value name="ECHO">
           <shadow type="inout_pins">
             <field name="PIN">11</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="device_dht11">
-        <value name="PIN">
-          <shadow type="inout_pins">
-            <field name="PIN">7</field>
           </shadow>
         </value>
       </block>

@@ -1,3 +1,16 @@
+Blockly.Blocks.device_dht11={
+    init:function(){
+        this.setColour(100);
+        this.appendValueInput("PIN")
+            .appendField("DHT11传感器 管脚#",Number)
+            .setCheck("Number");
+        this.appendDummyInput("")
+            .appendField(new Blockly.FieldDropdown([["获取当前温度(℃)","Temperature"],["获取当前湿度(%)","Humidity"]]),"MODE");
+        this.setOutput(true,"Number");
+        this.setInputsInline(true);
+    }
+};
+
 Blockly.Blocks.device_hcsr04_distance={
     init:function(){
         this.setColour(100);
@@ -7,19 +20,6 @@ Blockly.Blocks.device_hcsr04_distance={
         this.appendValueInput("ECHO")
             .appendField("Echo#",Number)
             .setCheck("Number");
-        this.setOutput(true,"Number");
-        this.setInputsInline(true);
-    }
-};
-
-Blockly.Blocks.device_dht11={
-    init:function(){
-        this.setColour(100);
-        this.appendValueInput("PIN")
-            .appendField("DHT11传感器 管脚#",Number)
-            .setCheck("Number");
-        this.appendDummyInput("")
-            .appendField(new Blockly.FieldDropdown([["获取当前温度(℃)","Temperature"],["获取当前湿度(%)","Humidity"]]),"MODE");
         this.setOutput(true,"Number");
         this.setInputsInline(true);
     }
