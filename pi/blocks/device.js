@@ -40,6 +40,20 @@ Blockly.Blocks.device_stepper_step={
     }
 };
 
+Blockly.Blocks.device_hcsr04_distance={
+    init:function(){
+        this.setColour(100);
+        this.appendValueInput("TRIG")
+            .appendField("HC-SR04超声波测距(cm) Trig#",Number)
+            .setCheck("Number");
+        this.appendValueInput("ECHO")
+            .appendField("Echo#",Number)
+            .setCheck("Number");
+        this.setOutput(true,"Number");
+        this.setInputsInline(true);
+    }
+};
+
 Blockly.Blocks.device_beep={
     init:function(){
         this.setColour(100);
