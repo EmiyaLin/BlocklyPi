@@ -640,7 +640,18 @@
       </block>
     </category>
     <category name="显示器" colour="180">
-        <block type="display_lcd1602_init"></block>
+        <block type="display_lcd1602_init">
+          <value name="BUS">
+            <shadow type="factory_var">
+              <field name="VALUE">1</field>
+            </shadow>
+          </value>
+          <value name="LCD_ADDR">
+            <shadow type="factory_var">
+              <field name="VALUE">0x27</field>
+            </shadow>
+          </value>
+        </block>
         <block type="display_lcd1602_print">
           <value name="x">
             <shadow type="math_number">

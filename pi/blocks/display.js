@@ -2,17 +2,29 @@ Blockly.Blocks.display_lcd1602_init={
     init:function(){
         this.setColour(180);
         this.appendDummyInput("")
-            .appendField("显示器LCD1602 初始化");
+            .appendField("显示器LCD1602")
+            .appendField(new Blockly.FieldTextInput('mylcd'), 'LCD_OBJ')
+            .appendField("初始化");
+        this.appendValueInput("BUS",Number)
+			.appendField("总线")
+            .setCheck("Number");
+        this.appendValueInput("LCD_ADDR",Number)
+            .appendField("设备地址")
+            .setCheck("Number");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setInputsInline(true);
     }
 };
 
 Blockly.Blocks.display_lcd1602_print={
     init:function(){
         this.setColour(180);
+        this.appendDummyInput("")
+            .appendField("显示器LCD1602")
+            .appendField(new Blockly.FieldTextInput('mylcd'), 'LCD_OBJ');
         this.appendValueInput("x",Number)
-			.appendField("显示器LCD1602 在第")
+			.appendField("在第")
             .setCheck("Number");
         this.appendValueInput("y",Number)
 			.appendField("行第")
@@ -30,7 +42,8 @@ Blockly.Blocks.display_lcd1602_printline={
     init:function(){
         this.setColour(180);
         this.appendDummyInput("")
-            .appendField("显示器LCD1602");
+            .appendField("显示器LCD1602")
+            .appendField(new Blockly.FieldTextInput('mylcd'), 'LCD_OBJ');
         this.appendValueInput("STR1",String)
 			.appendField("打印在第1行")
             .setCheck("String");
@@ -46,7 +59,9 @@ Blockly.Blocks.display_lcd1602_clear={
     init:function(){
         this.setColour(180);
         this.appendDummyInput("")
-            .appendField("显示器LCD1602 清屏");
+            .appendField("显示器LCD1602")
+            .appendField(new Blockly.FieldTextInput('mylcd'), 'LCD_OBJ')
+            .appendField("清屏");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
     }
