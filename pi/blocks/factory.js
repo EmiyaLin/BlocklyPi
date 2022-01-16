@@ -31,7 +31,7 @@ Blockly.Blocks.factory_block={
     }
 };
 
-Blockly.Blocks.factory_return={
+Blockly.Blocks.factory_var={
     init:function(){
         this.setColour(75);
         this.appendDummyInput("")

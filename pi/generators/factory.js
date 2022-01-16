@@ -12,6 +12,6 @@ Blockly.Python.factory_block=function(){
 	return this.getFieldValue('VALUE')+":\n"+DO;
 };
 
-Blockly.Python.factory_return=function(){
+Blockly.Python.factory_var=function(){
 	return [this.getFieldValue('VALUE'),Blockly.Python.ORDER_ATOMIC];
 };
