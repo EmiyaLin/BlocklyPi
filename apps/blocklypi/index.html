@@ -640,8 +640,8 @@
       </block>
     </category>
     <category name="显示器" colour="180">
-        <block type="display_init_lcd1602"></block>
-        <block type="display_print_lcd1602">
+        <block type="display_lcd1602_init"></block>
+        <block type="display_lcd1602_print">
           <value name="x">
             <shadow type="math_number">
               <field name="NUM">1</field>
@@ -658,7 +658,7 @@
             </shadow>
           </value>
         </block>
-        <block type="display_printline_lcd1602">
+        <block type="display_lcd1602_printline">
           <value name="STR1">
             <block type="text">
               <field name="TEXT"></field>
@@ -670,7 +670,7 @@
             </block>
           </value>
         </block>
-        <block type="display_clear_lcd1602"></block>
+        <block type="display_lcd1602_clear"></block>
     </category>
     <category name="外部设备" colour="100">
       <block type="device_dht11">

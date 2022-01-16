@@ -1,4 +1,4 @@
-Blockly.Blocks.display_init_lcd1602={
+Blockly.Blocks.display_lcd1602_init={
     init:function(){
         this.setColour(180);
         this.appendDummyInput("")
@@ -8,7 +8,7 @@ Blockly.Blocks.display_init_lcd1602={
     }
 };
 
-Blockly.Blocks.display_print_lcd1602={
+Blockly.Blocks.display_lcd1602_print={
     init:function(){
         this.setColour(180);
         this.appendValueInput("x",Number)
@@ -26,7 +26,7 @@ Blockly.Blocks.display_print_lcd1602={
     }
 };
 
-Blockly.Blocks.display_printline_lcd1602={
+Blockly.Blocks.display_lcd1602_printline={
     init:function(){
         this.setColour(180);
         this.appendDummyInput("")
@@ -42,7 +42,7 @@ Blockly.Blocks.display_printline_lcd1602={
     }
 };
 
-Blockly.Blocks.display_clear_lcd1602={
+Blockly.Blocks.display_lcd1602_clear={
     init:function(){
         this.setColour(180);
         this.appendDummyInput("")
