@@ -17,6 +17,8 @@
 
 DHT11温湿度传感器的驱动库在python_libraries/dht11目录下
 
+ADS1115电压传感器的驱动库在python_libraries/ads1115目录下
+
 步进电机的驱动库在python_libraries/stepper目录下
 
 更多说明详见Blockly

@@ -25,6 +25,23 @@ Blockly.Blocks.device_hcsr04_distance={
     }
 };
 
+Blockly.Blocks.device_ads1115={
+    init:function(){
+        this.setColour(100);
+        this.appendValueInput("BUS")
+            .appendField("ADS1115电压传感器 总线",Number)
+            .setCheck("Number");
+        this.appendValueInput("ADS1115_ADDR",Number)
+            .appendField("设备地址")
+            .setCheck("Number");
+        this.appendDummyInput("")
+            .appendField("通道")
+            .appendField(new Blockly.FieldDropdown([["A0","0"],["A1","1"],["A2","2"],["A3","3"]]),"CHANNEL");
+        this.setOutput(true,"Number");
+        this.setInputsInline(true);
+    }
+};
+
 Blockly.Blocks.device_stepper_init={
     init:function(){
         this.setColour(100);

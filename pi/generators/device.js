@@ -29,6 +29,14 @@ Blockly.Python.device_hcsr04_distance=function(){
     return [functionName+"("+trig+","+echo+")",Blockly.Python.ORDER_ATOMIC];
 };
 
+Blockly.Python.device_ads1115=function(){
+    Blockly.Python.definitions_['import ads1115'] = 'import ads1115';
+    var bus=Blockly.Python.valueToCode(this,'BUS',Blockly.Python.ORDER_ATOMIC);
+    var ads1115_addr=Blockly.Python.valueToCode(this,'ADS1115_ADDR',Blockly.Python.ORDER_ATOMIC);
+    var channel=this.getFieldValue("CHANNEL");
+    return ["ads1115.ADS1115_analogRead("+bus+","+ads1115_addr+","+channel+")",Blockly.Python.ORDER_ATOMIC];
+};
+
 Blockly.Python.device_stepper_init=function(){
     Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
     Blockly.Python.definitions_['from stepper import Stepper'] = 'from stepper import Stepper';
