@@ -15,15 +15,6 @@ Blockly.Python.display_lcd1602_print=function(){
 	return lcd_obj+".print_lcd("+y+"-1,"+x+"-1,"+str+")\n";
 };
 
-Blockly.Python.display_lcd1602_print=function(){
-    Blockly.Python.definitions_['from lcd1602 import LCD1602'] = "from lcd1602 import LCD1602";
-    var lcd_obj=this.getFieldValue('LCD_OBJ');
-    var x=Blockly.Python.valueToCode(this,'x',Blockly.Python.ORDER_ATOMIC);
-    var y=Blockly.Python.valueToCode(this,'y',Blockly.Python.ORDER_ATOMIC);
-    var str=Blockly.Python.valueToCode(this,'STR',Blockly.Python.ORDER_ATOMIC);
-	return lcd_obj+".print_lcd("+y+"-1,"+x+"-1,"+str+")\n";
-};
-
 Blockly.Python.display_lcd1602_printline=function(){
     Blockly.Python.definitions_['from lcd1602 import LCD1602'] = "from lcd1602 import LCD1602";
     var lcd_obj=this.getFieldValue('LCD_OBJ');
