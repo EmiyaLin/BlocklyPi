@@ -682,6 +682,58 @@
           </value>
         </block>
         <block type="display_lcd1602_clear"></block>
+        <block type="display_oled_init">
+          <value name="BUS">
+            <shadow type="factory_var">
+              <field name="VALUE">1</field>
+            </shadow>
+          </value>
+          <value name="OLED_ADDR">
+            <shadow type="factory_var">
+              <field name="VALUE">0x3C</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="display_oled_print">
+          <value name="x">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="y">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
+            </shadow>
+          </value>
+          <value name="STR">
+            <shadow type="text">
+              <field name="TEXT">Hello world!</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="display_oled_printline">
+          <value name="STR1">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+          </value>
+          <value name="STR2">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+          </value>
+          <value name="STR3">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+          </value>
+          <value name="STR4">
+            <block type="text">
+              <field name="TEXT"></field>
+            </block>
+          </value>
+        </block>
+        <block type="display_oled_clear"></block>
     </category>
     <category name="外部设备" colour="100">
       <block type="device_dht11">
