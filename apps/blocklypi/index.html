@@ -16,6 +16,7 @@
   <script src="../../pi/blocks/pwm.js"></script>
   <script src="../../pi/blocks/time.js"></script>
   <script src="../../pi/blocks/console.js"></script>
+  <script src="../../pi/blocks/thread.js"></script>
   <script src="../../pi/blocks/file.js"></script>
   <script src="../../pi/blocks/network.js"></script>
   <script src="../../pi/blocks/serial.js"></script>
@@ -28,6 +29,7 @@
   <script src="../../pi/generators/pwm.js"></script>
   <script src="../../pi/generators/time.js"></script>
   <script src="../../pi/generators/console.js"></script>
+  <script src="../../pi/generators/thread.js"></script>
   <script src="../../pi/generators/file.js"></script>
   <script src="../../pi/generators/network.js"></script>
   <script src="../../pi/generators/serial.js"></script>
@@ -493,6 +495,25 @@
           </shadow>
         </value>
       </block>
+    </category>
+    <category name="多线程" colour="230">
+      <block type="thread_thread_init"></block>
+      <block type="thread_thread_start"></block>
+      <block type="thread_lock_init"></block>
+      <block type="thread_lock_acquire"></block>
+      <block type="thread_lock_release"></block>
+      <block type="thread_semaphore_init">
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="thread_semaphore_acquire"></block>
+      <block type="thread_semaphore_release"></block>
+      <block type="thread_event_init"></block>
+      <block type="thread_event_set"></block>
+      <block type="thread_event_wait"></block>
     </category>
     <category name="文件系统" colour="0">
       <block type="file_read">
