@@ -1,3 +1,5 @@
+OBJ_FLAG="_";
+
 var profile = {
     Python: {
         description: "Physics Pins",
