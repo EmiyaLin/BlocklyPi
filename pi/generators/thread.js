@@ -5,12 +5,26 @@ Blockly.Python.thread_thread_init=function(){
 	return THREAD_OBJ+"=threading.Thread(target="+FUNC+")\n";
 };
 
-Blockly.Python.thread_thread_initblock=function(){
+Blockly.Python.thread_thread_initblock=function(block){
+	var globals = [];
+	var workspace = block.workspace;
+	var usedVariables = Blockly.Variables.allUsedVarModels(workspace) || [];
+	for (let i=0,variable;(variable=usedVariables[i]);i++){
+		var varName=variable.name;
+		if(block.getVars().indexOf(varName)===-1) {
+			globals.push(Blockly.Python.variableDB_.getName(varName,Blockly.Variables.NAME_TYPE));
+		};
+	};
+	var devVarList=Blockly.Variables.allDeveloperVariables(workspace);
+	for (let i=0;i<devVarList.length;i++){
+		globals.push(Blockly.Python.nameDB_.getName(devVarList[i],Blockly.Names.DEVELOPER_VARIABLE_TYPE));
+	};
+	var globalString = globals.length?Blockly.Python.INDENT+'global '+globals.join(', ')+'\n':'';
 	Blockly.Python.definitions_['import threading'] = 'import threading';
 	var THREAD_OBJ=OBJ_FLAG+this.getFieldValue('THREAD_OBJ');
 	var FUNC=OBJ_FLAG+"thread"+THREAD_OBJ;
 	var DO=Blockly.Python.statementToCode(this,'DO')||Blockly.Python.PASS;
-	return "def "+FUNC+"():\n"+DO+THREAD_OBJ+"=threading.Thread(target="+FUNC+")\n";
+	return "def "+FUNC+"():\n"+globalString+DO+THREAD_OBJ+"=threading.Thread(target="+FUNC+")\n";
 };
 
 Blockly.Python.thread_thread_start=function(){
