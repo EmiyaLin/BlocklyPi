@@ -4,13 +4,25 @@ Blockly.Blocks.thread_thread_init={
         this.appendDummyInput("")
             .appendField("线程")
             .appendField(new Blockly.FieldTextInput('thread'), 'THREAD_OBJ')
-            .appendField("初始化");
+            .appendField("初始化  函数名称");
         this.appendDummyInput("")
-            .appendField("函数名称")
             .appendField(new Blockly.FieldTextInput('func'), 'FUNC');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.thread_thread_initblock={
+    init:function(){
+        this.setColour(230);
+        this.appendDummyInput("")
+            .appendField("线程")
+            .appendField(new Blockly.FieldTextInput('thread'), 'THREAD_OBJ')
+            .appendField("初始化  通过执行");
+        this.appendStatementInput('DO');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
     }
 };
 

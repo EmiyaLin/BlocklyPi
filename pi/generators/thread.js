@@ -5,6 +5,14 @@ Blockly.Python.thread_thread_init=function(){
 	return THREAD_OBJ+"=threading.Thread(target="+FUNC+")\n";
 };
 
+Blockly.Python.thread_thread_initblock=function(){
+	Blockly.Python.definitions_['import threading'] = 'import threading';
+	var THREAD_OBJ=OBJ_FLAG+this.getFieldValue('THREAD_OBJ');
+	var FUNC=OBJ_FLAG+"thread"+THREAD_OBJ;
+	var DO=Blockly.Python.statementToCode(this,'DO')||Blockly.Python.PASS;
+	return "def "+FUNC+"():\n"+DO+THREAD_OBJ+"=threading.Thread(target="+FUNC+")\n";
+};
+
 Blockly.Python.thread_thread_start=function(){
 	Blockly.Python.definitions_['import threading'] = 'import threading';
 	var THREAD_OBJ=OBJ_FLAG+this.getFieldValue('THREAD_OBJ');

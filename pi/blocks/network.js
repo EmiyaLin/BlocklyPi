@@ -2,7 +2,7 @@ Blockly.Blocks.network_get={
     init:function(){
         this.setColour(0);
         this.appendValueInput("URL",String)
-			.appendField("执行GET请求 URL")
+			.appendField("执行GET请求  URL")
             .setCheck("String");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -13,7 +13,7 @@ Blockly.Blocks.network_getout={
     init:function(){
         this.setColour(0);
         this.appendValueInput("URL",String)
-			.appendField("执行GET请求并返回数据 URL")
+			.appendField("执行GET请求并返回数据  URL")
             .setCheck("String");
         this.setOutput(true,"String");
     }
