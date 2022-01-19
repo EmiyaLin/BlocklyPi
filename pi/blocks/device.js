@@ -11,6 +11,22 @@ Blockly.Blocks.device_dht11={
     }
 };
 
+Blockly.Blocks.device_bmp180={
+    init:function(){
+        this.setColour(100);
+        this.appendValueInput("BUS")
+            .appendField("BMP180传感器 总线",Number)
+            .setCheck("Number");
+        this.appendValueInput("BMP180_ADDR",Number)
+            .appendField("设备地址")
+            .setCheck("Number");
+        this.appendDummyInput("")
+            .appendField(new Blockly.FieldDropdown([["获取当前气压(Pa)","Pressure"],["获取当前温度(℃)","Temperature"]]),"MODE");
+        this.setOutput(true,"Number");
+        this.setInputsInline(true);
+    }
+};
+
 Blockly.Blocks.device_hcsr04_distance={
     init:function(){
         this.setColour(100);

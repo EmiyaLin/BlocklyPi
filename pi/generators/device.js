@@ -6,6 +6,14 @@ Blockly.Python.device_dht11=function(){
     return ["dht11.get"+mode+"("+pin+")",Blockly.Python.ORDER_ATOMIC];
 };
 
+Blockly.Python.device_bmp180=function(){
+    Blockly.Python.definitions_['import bmp180'] = 'import bmp180';
+    var bus=Blockly.Python.valueToCode(this,'BUS',Blockly.Python.ORDER_ATOMIC);
+    var bmp180_addr=Blockly.Python.valueToCode(this,'BMP180_ADDR',Blockly.Python.ORDER_ATOMIC);
+    var mode=this.getFieldValue("MODE");
+    return ["bmp180.get"+mode+"("+bus+","+bmp180_addr+")",Blockly.Python.ORDER_ATOMIC];
+};
+
 Blockly.Python.device_hcsr04_distance=function(){
     Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
     Blockly.Python.definitions_['import time'] = 'import time';
