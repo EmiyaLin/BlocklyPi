@@ -13,9 +13,13 @@
 
 进行串口通信时需要先执行sudo apt-get install python-serial安装相应的扩展包
 
-使用显示器LCD1602模块时需要开启iic功能并执行sudo apt-get install python-smbus安装相应的扩展包，LCD1602的驱动库在python_libraries/lcd1602目录下
+使用iic模块时需要开启iic功能并执行sudo apt-get install python-smbus安装相应的扩展包
+
+LCD1602的驱动库在python_libraries/lcd1602目录下
 
 DHT11温湿度传感器的驱动库在python_libraries/dht11目录下
+
+BMP180气压/温度传感器的驱动库在python_libraries/bmp180目录下
 
 ADS1115电压传感器的驱动库在python_libraries/ads1115目录下
 
