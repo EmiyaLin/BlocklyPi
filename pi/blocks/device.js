@@ -29,7 +29,7 @@ Blockly.Blocks.device_ads1115={
     init:function(){
         this.setColour(100);
         this.appendValueInput("BUS")
-            .appendField("ADS1115电压传感器 总线",Number)
+            .appendField("ADS1115电压传感器(V) 总线",Number)
             .setCheck("Number");
         this.appendValueInput("ADS1115_ADDR",Number)
             .appendField("设备地址")
