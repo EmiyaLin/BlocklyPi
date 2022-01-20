@@ -662,100 +662,146 @@
       </block>
     </category>
     <category name="显示器" colour="180">
-        <block type="display_lcd1602_init">
-          <value name="BUS">
-            <shadow type="factory_var">
-              <field name="VALUE">1</field>
-            </shadow>
-          </value>
-          <value name="LCD_ADDR">
-            <shadow type="factory_var">
-              <field name="VALUE">0x27</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="display_lcd1602_print">
-          <value name="x">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <value name="y">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <value name="STR">
-            <shadow type="text">
-              <field name="TEXT">hello</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="display_lcd1602_printline">
-          <value name="STR1">
-            <block type="text">
-              <field name="TEXT"></field>
-            </block>
-          </value>
-          <value name="STR2">
-            <block type="text">
-              <field name="TEXT"></field>
-            </block>
-          </value>
-        </block>
-        <block type="display_lcd1602_clear"></block>
-        <block type="display_oled_init">
-          <value name="BUS">
-            <shadow type="factory_var">
-              <field name="VALUE">1</field>
-            </shadow>
-          </value>
-          <value name="OLED_ADDR">
-            <shadow type="factory_var">
-              <field name="VALUE">0x3C</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="display_oled_print">
-          <value name="x">
-            <shadow type="math_number">
-              <field name="NUM">0</field>
-            </shadow>
-          </value>
-          <value name="y">
-            <shadow type="math_number">
-              <field name="NUM">0</field>
-            </shadow>
-          </value>
-          <value name="STR">
-            <shadow type="text">
-              <field name="TEXT">Hello world!</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="display_oled_printline">
-          <value name="STR1">
-            <block type="text">
-              <field name="TEXT"></field>
-            </block>
-          </value>
-          <value name="STR2">
-            <block type="text">
-              <field name="TEXT"></field>
-            </block>
-          </value>
-          <value name="STR3">
-            <block type="text">
-              <field name="TEXT"></field>
-            </block>
-          </value>
-          <value name="STR4">
-            <block type="text">
-              <field name="TEXT"></field>
-            </block>
-          </value>
-        </block>
-        <block type="display_oled_clear"></block>
+      <block type="display_lcd1602_init">
+        <value name="BUS">
+          <shadow type="factory_var">
+            <field name="VALUE">1</field>
+          </shadow>
+        </value>
+        <value name="LCD_ADDR">
+          <shadow type="factory_var">
+            <field name="VALUE">0x27</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="display_lcd1602_print">
+        <value name="x">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="y">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="STR">
+          <shadow type="text">
+            <field name="TEXT">hello</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="display_lcd1602_printline">
+        <value name="STR1">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="STR2">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="display_lcd1602_clear"></block>
+      <block type="display_oled_init">
+        <value name="BUS">
+          <shadow type="factory_var">
+            <field name="VALUE">1</field>
+          </shadow>
+        </value>
+        <value name="OLED_ADDR">
+          <shadow type="factory_var">
+            <field name="VALUE">0x3C</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="display_oled_print">
+        <value name="x">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="y">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+        <value name="STR">
+          <shadow type="text">
+            <field name="TEXT">Hello world!</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="display_oled_printline">
+        <value name="STR1">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="STR2">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="STR3">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+        <value name="STR4">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="display_oled_clear"></block>
+      <block type="display_tm1637_init">
+        <value name="CLK">
+          <shadow type="inout_pins">
+            <field name="PIN">7</field>
+          </shadow>
+        </value>
+        <value name="DIO">
+          <shadow type="inout_pins">
+            <field name="PIN">11</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="display_tm1637_number">
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">1234</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="display_tm1637_print">
+        <value name="STR">
+          <block type="text">
+            <field name="TEXT">Help</field>
+          </block>
+        </value>
+      </block>
+      <block type="display_tm1637_ratio">
+        <value name="NUM1">
+          <shadow type="math_number">
+            <field name="NUM">12</field>
+          </shadow>
+        </value>
+        <value name="NUM2">
+          <shadow type="math_number">
+            <field name="NUM">34</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="display_tm1637_temperature">
+        <value name="TEMP">
+          <shadow type="math_number">
+            <field name="NUM">-5</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="display_tm1637_clear"></block>
     </category>
     <category name="外部设备" colour="100">
       <block type="device_dht11">

@@ -141,3 +141,101 @@ Blockly.Blocks.display_oled_clear={
         this.setNextStatement(true);
     }
 };
+
+Blockly.Blocks.display_tm1637_init={
+    init:function(){
+        this.setColour(180);
+        this.appendDummyInput("")
+            .appendField("数码管TM1637")
+            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ')
+            .appendField("初始化");
+        this.appendValueInput("CLK",Number)
+			.appendField("CLK#")
+            .setCheck("Number");
+        this.appendValueInput("DIO",Number)
+            .appendField("DIO#")
+            .setCheck("Number");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.display_tm1637_number={
+    init:function(){
+        this.setColour(180);
+        this.appendDummyInput("")
+            .appendField("数码管TM1637")
+            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ');
+        this.appendValueInput("NUM",Number)
+			.appendField("显示数字")
+            .setCheck("Number");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.display_tm1637_print={
+    init:function(){
+        this.setColour(180);
+        this.appendDummyInput("")
+            .appendField("数码管TM1637")
+            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ');
+        this.appendDummyInput("")
+            .appendField("显示分隔符\":\"")
+            .appendField(new Blockly.FieldCheckbox(true),"MODE");
+        this.appendValueInput("STR",String)
+            .appendField("显示字符")
+            .setCheck("String");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    }
+};
+
+Blockly.Blocks.display_tm1637_ratio={
+    init:function(){
+        this.setColour(180);
+        this.appendDummyInput("")
+            .appendField("数码管TM1637")
+            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ');
+        this.appendValueInput("NUM1",Number)
+            .appendField("显示比例")
+            .setCheck("Number");
+        this.appendValueInput("NUM2",Number)
+            .appendField(":")
+            .setCheck("Number");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.display_tm1637_temperature={
+    init:function(){
+        this.setColour(180);
+        this.appendDummyInput("")
+            .appendField("数码管TM1637")
+            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ');
+        this.appendValueInput("TEMP",Number)
+            .appendField("显示温度")
+            .setCheck("Number");
+        this.appendDummyInput("")
+            .appendField("℃");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setInputsInline(true);
+    }
+};
+
+Blockly.Blocks.display_tm1637_clear={
+    init:function(){
+        this.setColour(180);
+        this.appendDummyInput("")
+            .appendField("数码管TM1637")
+            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ')
+            .appendField("清屏");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+    }
+};
