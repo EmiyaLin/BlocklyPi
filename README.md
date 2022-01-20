@@ -19,6 +19,8 @@ LCD1602的驱动库在python_libraries/lcd1602目录下
 
 OLED的驱动库在python_libraries/ssd1306目录下
 
+TM1637数码管的驱动库在python_libraries/tm1637目录下
+
 DHT11温湿度传感器的驱动库在python_libraries/dht11目录下
 
 BMP180气压/温度传感器的驱动库在python_libraries/bmp180目录下
