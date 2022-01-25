@@ -62,8 +62,8 @@ class TM1637(object):
             sleep(TM1637_DELAY)
             if (GPIO.input(self.dio)):
                 GPIO.setup(self.dio,GPIO.OUT)
-                GPIO.input(self.dio,GPIO.LOW)
-                GPIO.setup(self.dio,GPIO.INPUT)
+                GPIO.output(self.dio,GPIO.LOW)
+                GPIO.setup(self.dio,GPIO.IN)
         GPIO.setup(self.dio,GPIO.OUT)
 
     def brightness(self, val=None):
