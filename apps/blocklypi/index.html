@@ -410,17 +410,29 @@
       </block>
     </category>
     <category name="PWM" colour="45">
-      <block type="pwm_init">
-        <value name="PIN">
-          <shadow type="inout_pins"></shadow>
-        </value>
-        <value name="FREQ">
-          <shadow type="math_number">
-            <field name="NUM">50</field>
-          </shadow>
+      <block type="variables_set">
+        <field name="VAR">pwm</field>
+        <value name="VALUE">
+          <block type="pwm_init">
+            <value name="PIN">
+              <shadow type="inout_pins">
+                <field name="PIN">7</field>
+              </shadow>
+            </value>
+            <value name="FREQ">
+              <shadow type="math_number">
+                <field name="NUM">50</field>
+              </shadow>
+            </value>
+          </block>
         </value>
       </block>
       <block type="pwm_start">
+        <value name="PWM_OBJ">
+          <block type="variables_get">
+            <field name="VAR">pwm</field>
+          </block>
+        </value>
         <value name="DUTY">
           <shadow type="math_number">
             <field name="NUM">50</field>
@@ -428,6 +440,11 @@
         </value>
       </block>
       <block type="pwm_freq">
+        <value name="PWM_OBJ">
+          <block type="variables_get">
+            <field name="VAR">pwm</field>
+          </block>
+        </value>
         <value name="FREQ">
           <shadow type="math_number">
             <field name="NUM">50</field>
@@ -435,13 +452,24 @@
         </value>
       </block>
       <block type="pwm_duty">
+        <value name="PWM_OBJ">
+          <block type="variables_get">
+            <field name="VAR">pwm</field>
+          </block>
+        </value>
         <value name="DUTY">
           <shadow type="math_number">
             <field name="NUM">50</field>
           </shadow>
         </value>
       </block>
-      <block type="pwm_stop"></block>
+      <block type="pwm_stop">
+        <value name="PWM_OBJ">
+          <block type="variables_get">
+            <field name="VAR">pwm</field>
+          </block>
+        </value>
+      </block>
     </category>
     <category name="延时" colour="120">
       <block type="time_delay">
@@ -498,7 +526,6 @@
     </category>
     <category name="多线程" colour="230">
       <block type="thread_thread_init"></block>
-      <block type="thread_thread_initblock"></block>
       <block type="thread_thread_start"></block>
       <block type="thread_lock_init"></block>
       <block type="thread_lock_acquire"></block>
@@ -594,7 +621,18 @@
           </shadow>
         </value>
       </block>
-      <block type="network_tcp_init">
+      <block type="variables_set">
+        <field name="VAR">tcp</field>
+        <value name="VALUE">
+          <block type="network_tcp_init"></block>
+        </value>
+      </block>
+      <block type="network_tcp_connect">
+        <value name="TCP_OBJ">
+          <block type="variables_get">
+            <field name="VAR">tcp</field>
+          </block>
+        </value>
         <value name="HOST">
           <block type="text">
             <field name="TEXT">192.168.0.100</field>
@@ -606,8 +644,19 @@
           </block>
         </value>
       </block>
-      <block type="network_tcp_close"></block>
+      <block type="network_tcp_close">
+        <value name="TCP_OBJ">
+          <block type="variables_get">
+            <field name="VAR">tcp</field>
+          </block>
+        </value>
+      </block>
       <block type="network_tcp_recv">
+        <value name="TCP_OBJ">
+          <block type="variables_get">
+            <field name="VAR">tcp</field>
+          </block>
+        </value>
         <value name="SIZE">
           <shadow type="math_number">
             <field name="NUM">10</field>
@@ -615,6 +664,11 @@
         </value>
       </block>
       <block type="network_tcp_send">
+        <value name="TCP_OBJ">
+          <block type="variables_get">
+            <field name="VAR">tcp</field>
+          </block>
+        </value>
         <value name="DATA">
           <shadow type="text">
             <field name="TEXT">hello</field>
@@ -623,37 +677,88 @@
       </block>
     </category>
     <category name="串口" colour="65">
-      <block type="serial_init">
-        <value name="DEV_FILE">
-          <block type="text">
-            <field name="TEXT">/dev/tty0</field>
-          </block>
-        </value>
-        <value name="BAUD">
-          <block type="math_number">
-            <field name="NUM">9600</field>
-          </block>
-        </value>
-        <value name="TIMEOUT">
-          <block type="math_number">
-            <field name="NUM">0.5</field>
+      <block type="variables_set">
+        <field name="VAR">ser</field>
+        <value name="VALUE">
+          <block type="serial_init">
+            <value name="DEV_FILE">
+              <block type="text">
+                <field name="TEXT">/dev/tty0</field>
+              </block>
+            </value>
+            <value name="BAUD">
+              <block type="math_number">
+                <field name="NUM">9600</field>
+              </block>
+            </value>
+            <value name="TIMEOUT">
+              <block type="math_number">
+                <field name="NUM">0.5</field>
+              </block>
+            </value>
           </block>
         </value>
       </block>
-      <block type="serial_open"></block>
-      <block type="serial_isopen"></block>
-      <block type="serial_close"></block>
-      <block type="serial_inwaiting"></block>
-      <block type="serial_flushinput"></block>
+      <block type="serial_open">
+        <value name="SER_OBJ">
+          <block type="variables_get">
+            <field name="VAR">ser</field>
+          </block>
+        </value>
+      </block>
+      <block type="serial_isopen">
+        <value name="SER_OBJ">
+          <block type="variables_get">
+            <field name="VAR">ser</field>
+          </block>
+        </value>
+      </block>
+      <block type="serial_close">
+        <value name="SER_OBJ">
+          <block type="variables_get">
+            <field name="VAR">ser</field>
+          </block>
+        </value>
+      </block>
+      <block type="serial_inwaiting">
+        <value name="SER_OBJ">
+          <block type="variables_get">
+            <field name="VAR">ser</field>
+          </block>
+        </value>
+      </block>
+      <block type="serial_flushinput">
+        <value name="SER_OBJ">
+          <block type="variables_get">
+            <field name="VAR">ser</field>
+          </block>
+        </value>
+      </block>
       <block type="serial_read">
+        <value name="SER_OBJ">
+          <block type="variables_get">
+            <field name="VAR">ser</field>
+          </block>
+        </value>
         <value name="SIZE">
           <shadow type="math_number">
             <field name="NUM">10</field>
           </shadow>
         </value>
       </block>
-      <block type="serial_readline"></block>
+      <block type="serial_readline">
+        <value name="SER_OBJ">
+          <block type="variables_get">
+            <field name="VAR">ser</field>
+          </block>
+        </value>
+      </block>
       <block type="serial_write">
+        <value name="SER_OBJ">
+          <block type="variables_get">
+            <field name="VAR">ser</field>
+          </block>
+        </value>
         <value name="DATA">
           <shadow type="text">
             <field name="TEXT">hello</field>
@@ -662,19 +767,29 @@
       </block>
     </category>
     <category name="显示器" colour="180">
-      <block type="display_lcd1602_init">
-        <value name="BUS">
-          <shadow type="factory_var">
-            <field name="VALUE">1</field>
-          </shadow>
-        </value>
-        <value name="LCD_ADDR">
-          <shadow type="factory_var">
-            <field name="VALUE">0x27</field>
-          </shadow>
+      <block type="variables_set">
+        <field name="VAR">mylcd</field>
+        <value name="VALUE">
+          <block type="display_lcd1602_init">
+            <value name="BUS">
+              <shadow type="factory_var">
+                <field name="VALUE">1</field>
+              </shadow>
+            </value>
+            <value name="LCD_ADDR">
+              <shadow type="factory_var">
+                <field name="VALUE">0x27</field>
+              </shadow>
+            </value>
+          </block>
         </value>
       </block>
       <block type="display_lcd1602_print">
+        <value name="LCD_OBJ">
+          <block type="variables_get">
+            <field name="VAR">mylcd</field>
+          </block>
+        </value>
         <value name="x">
           <shadow type="math_number">
             <field name="NUM">1</field>
@@ -692,6 +807,11 @@
         </value>
       </block>
       <block type="display_lcd1602_printline">
+        <value name="LCD_OBJ">
+          <block type="variables_get">
+            <field name="VAR">mylcd</field>
+          </block>
+        </value>
         <value name="STR1">
           <block type="text">
             <field name="TEXT"></field>
@@ -703,20 +823,36 @@
           </block>
         </value>
       </block>
-      <block type="display_lcd1602_clear"></block>
-      <block type="display_oled_init">
-        <value name="BUS">
-          <shadow type="factory_var">
-            <field name="VALUE">1</field>
-          </shadow>
+      <block type="display_lcd1602_clear">
+        <value name="LCD_OBJ">
+          <block type="variables_get">
+            <field name="VAR">mylcd</field>
+          </block>
         </value>
-        <value name="OLED_ADDR">
-          <shadow type="factory_var">
-            <field name="VALUE">0x3C</field>
-          </shadow>
+      </block>
+      <block type="variables_set">
+        <field name="VAR">myoled</field>
+        <value name="VALUE">
+          <block type="display_oled_init">
+            <value name="BUS">
+              <shadow type="factory_var">
+                <field name="VALUE">1</field>
+              </shadow>
+            </value>
+            <value name="OLED_ADDR">
+              <shadow type="factory_var">
+                <field name="VALUE">0x3C</field>
+              </shadow>
+            </value>
+          </block>
         </value>
       </block>
       <block type="display_oled_print">
+        <value name="OLED_OBJ">
+          <block type="variables_get">
+            <field name="VAR">myoled</field>
+          </block>
+        </value>
         <value name="x">
           <shadow type="math_number">
             <field name="NUM">0</field>
@@ -734,6 +870,11 @@
         </value>
       </block>
       <block type="display_oled_printline">
+        <value name="OLED_OBJ">
+          <block type="variables_get">
+            <field name="VAR">myoled</field>
+          </block>
+        </value>
         <value name="STR1">
           <block type="text">
             <field name="TEXT"></field>
@@ -755,20 +896,36 @@
           </block>
         </value>
       </block>
-      <block type="display_oled_clear"></block>
-      <block type="display_tm1637_init">
-        <value name="CLK">
-          <shadow type="inout_pins">
-            <field name="PIN">7</field>
-          </shadow>
+      <block type="display_oled_clear">
+        <value name="OLED_OBJ">
+          <block type="variables_get">
+            <field name="VAR">myoled</field>
+          </block>
         </value>
-        <value name="DIO">
-          <shadow type="inout_pins">
-            <field name="PIN">11</field>
-          </shadow>
+      </block>
+      <block type="variables_set">
+        <field name="VAR">myled</field>
+        <value name="VALUE">
+          <block type="display_tm1637_init">
+            <value name="CLK">
+              <shadow type="inout_pins">
+                <field name="PIN">7</field>
+              </shadow>
+            </value>
+            <value name="DIO">
+              <shadow type="inout_pins">
+                <field name="PIN">11</field>
+              </shadow>
+            </value>
+          </block>
         </value>
       </block>
       <block type="display_tm1637_number">
+        <value name="LED_OBJ">
+          <block type="variables_get">
+            <field name="VAR">myled</field>
+          </block>
+        </value>
         <value name="NUM">
           <shadow type="math_number">
             <field name="NUM">1234</field>
@@ -776,6 +933,11 @@
         </value>
       </block>
       <block type="display_tm1637_print">
+        <value name="LED_OBJ">
+          <block type="variables_get">
+            <field name="VAR">myled</field>
+          </block>
+        </value>
         <value name="STR">
           <block type="text">
             <field name="TEXT">Help</field>
@@ -783,6 +945,11 @@
         </value>
       </block>
       <block type="display_tm1637_ratio">
+        <value name="LED_OBJ">
+          <block type="variables_get">
+            <field name="VAR">myled</field>
+          </block>
+        </value>
         <value name="NUM1">
           <shadow type="math_number">
             <field name="NUM">12</field>
@@ -795,13 +962,24 @@
         </value>
       </block>
       <block type="display_tm1637_temperature">
+        <value name="LED_OBJ">
+          <block type="variables_get">
+            <field name="VAR">myled</field>
+          </block>
+        </value>
         <value name="TEMP">
           <shadow type="math_number">
             <field name="NUM">-5</field>
           </shadow>
         </value>
       </block>
-      <block type="display_tm1637_clear"></block>
+      <block type="display_tm1637_clear">
+        <value name="LED_OBJ">
+          <block type="variables_get">
+            <field name="VAR">myled</field>
+          </block>
+        </value>
+      </block>
     </category>
     <category name="外部设备" colour="100">
       <block type="device_dht11">
@@ -847,39 +1025,56 @@
           </shadow>
         </value>
       </block>
-      <block type="device_stepper_init">
-        <value name="PIN1">
-          <block type="inout_pins">
-            <field name="PIN">31</field>
-          </block>
-        </value>
-        <value name="PIN2">
-          <block type="inout_pins">
-            <field name="PIN">33</field>
-          </block>
-        </value>
-        <value name="PIN3">
-          <block type="inout_pins">
-            <field name="PIN">35</field>
-          </block>
-        </value>
-        <value name="PIN4">
-          <block type="inout_pins">
-            <field name="PIN">37</field>
-          </block>
-        </value>
-        <value name="STEPS">
-          <block type="math_number">
-            <field name="NUM">100</field>
-          </block>
-        </value>
-        <value name="SPEED">
-          <block type="math_number">
-            <field name="NUM">50</field>
+      <block type="variables_set">
+        <field name="VAR">stepper</field>
+        <value name="VALUE">
+          <block type="device_stepper_init">
+            <value name="PIN1">
+              <block type="inout_pins">
+                <field name="PIN">31</field>
+              </block>
+            </value>
+            <value name="PIN2">
+              <block type="inout_pins">
+                <field name="PIN">33</field>
+              </block>
+            </value>
+            <value name="PIN3">
+              <block type="inout_pins">
+                <field name="PIN">35</field>
+              </block>
+            </value>
+            <value name="PIN4">
+              <block type="inout_pins">
+                <field name="PIN">37</field>
+              </block>
+            </value>
+            <value name="STEPS">
+              <block type="math_number">
+                <field name="NUM">100</field>
+              </block>
+            </value>
           </block>
         </value>
       </block>
+      <block type="device_stepper_speed">
+        <value name="STEPPER_OBJ">
+          <block type="variables_get">
+            <field name="VAR">stepper</field>
+          </block>
+        </value>
+        <value name="SPEED">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+      </block>
       <block type="device_stepper_step">
+        <value name="STEPPER_OBJ">
+          <block type="variables_get">
+            <field name="VAR">stepper</field>
+          </block>
+        </value>
         <value name="STEPS">
           <shadow type="math_number">
             <field name="NUM">500</field>

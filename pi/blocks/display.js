@@ -2,17 +2,14 @@ Blockly.Blocks.display_lcd1602_init={
     init:function(){
         this.setColour(180);
         this.appendDummyInput("")
-            .appendField("显示器LCD1602")
-            .appendField(new Blockly.FieldTextInput('mylcd'), 'LCD_OBJ')
-            .appendField("初始化");
+            .appendField("LCD1602显示器 初始化");
         this.appendValueInput("BUS",Number)
 			.appendField("总线")
             .setCheck("Number");
         this.appendValueInput("LCD_ADDR",Number)
             .appendField("设备地址")
             .setCheck("Number");
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
+        this.setOutput(true);
         this.setInputsInline(true);
     }
 };
@@ -20,9 +17,8 @@ Blockly.Blocks.display_lcd1602_init={
 Blockly.Blocks.display_lcd1602_print={
     init:function(){
         this.setColour(180);
-        this.appendDummyInput("")
-            .appendField("显示器LCD1602")
-            .appendField(new Blockly.FieldTextInput('mylcd'), 'LCD_OBJ');
+        this.appendValueInput("LCD_OBJ")
+            .appendField("LCD1602显示器");
         this.appendValueInput("x",Number)
 			.appendField("在第")
             .setCheck("Number");
@@ -41,9 +37,8 @@ Blockly.Blocks.display_lcd1602_print={
 Blockly.Blocks.display_lcd1602_printline={
     init:function(){
         this.setColour(180);
-        this.appendDummyInput("")
-            .appendField("显示器LCD1602")
-            .appendField(new Blockly.FieldTextInput('mylcd'), 'LCD_OBJ');
+        this.appendValueInput("LCD_OBJ")
+            .appendField("LCD1602显示器");
         this.appendValueInput("STR1",String)
 			.appendField("打印在第1行")
             .setCheck("String");
@@ -58,9 +53,9 @@ Blockly.Blocks.display_lcd1602_printline={
 Blockly.Blocks.display_lcd1602_clear={
     init:function(){
         this.setColour(180);
+        this.appendValueInput("LCD_OBJ")
+            .appendField("LCD1602显示器");
         this.appendDummyInput("")
-            .appendField("显示器LCD1602")
-            .appendField(new Blockly.FieldTextInput('mylcd'), 'LCD_OBJ')
             .appendField("清屏");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -71,17 +66,14 @@ Blockly.Blocks.display_oled_init={
     init:function(){
         this.setColour(180);
         this.appendDummyInput("")
-            .appendField("显示器OLED")
-            .appendField(new Blockly.FieldTextInput('myoled'), 'OLED_OBJ')
-            .appendField("初始化");
+            .appendField("OLED显示器 初始化");
         this.appendValueInput("BUS",Number)
 			.appendField("总线")
             .setCheck("Number");
         this.appendValueInput("OLED_ADDR",Number)
             .appendField("设备地址")
             .setCheck("Number");
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
+        this.setOutput(true);
         this.setInputsInline(true);
     }
 };
@@ -89,9 +81,8 @@ Blockly.Blocks.display_oled_init={
 Blockly.Blocks.display_oled_print={
     init:function(){
         this.setColour(180);
-        this.appendDummyInput("")
-            .appendField("显示器OLED")
-            .appendField(new Blockly.FieldTextInput('myoled'), 'OLED_OBJ');
+        this.appendValueInput("OLED_OBJ")
+            .appendField("OLED显示器");
         this.appendValueInput("x",Number)
 			.appendField("在坐标 x:")
             .setCheck("Number");
@@ -110,9 +101,8 @@ Blockly.Blocks.display_oled_print={
 Blockly.Blocks.display_oled_printline={
     init:function(){
         this.setColour(180);
-        this.appendDummyInput("")
-            .appendField("显示器OLED")
-            .appendField(new Blockly.FieldTextInput('myoled'), 'OLED_OBJ');
+        this.appendValueInput("OLED_OBJ")
+            .appendField("OLED显示器");
         this.appendValueInput("STR1",String)
 			.appendField("打印在第1行")
             .setCheck("String");
@@ -133,9 +123,9 @@ Blockly.Blocks.display_oled_printline={
 Blockly.Blocks.display_oled_clear={
     init:function(){
         this.setColour(180);
+        this.appendValueInput("OLED_OBJ")
+            .appendField("OLED显示器");
         this.appendDummyInput("")
-            .appendField("显示器OLED")
-            .appendField(new Blockly.FieldTextInput('myoled'), 'OLED_OBJ')
             .appendField("清屏");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -146,17 +136,14 @@ Blockly.Blocks.display_tm1637_init={
     init:function(){
         this.setColour(180);
         this.appendDummyInput("")
-            .appendField("数码管TM1637")
-            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ')
-            .appendField("初始化");
+            .appendField("TM1637数码管 初始化");
         this.appendValueInput("CLK",Number)
 			.appendField("CLK#")
             .setCheck("Number");
         this.appendValueInput("DIO",Number)
             .appendField("DIO#")
             .setCheck("Number");
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
+        this.setOutput(true);
         this.setInputsInline(true);
     }
 };
@@ -164,9 +151,8 @@ Blockly.Blocks.display_tm1637_init={
 Blockly.Blocks.display_tm1637_number={
     init:function(){
         this.setColour(180);
-        this.appendDummyInput("")
-            .appendField("数码管TM1637")
-            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ');
+        this.appendValueInput("LED_OBJ")
+            .appendField("TM1637数码管");
         this.appendValueInput("NUM",Number)
 			.appendField("显示数字")
             .setCheck("Number");
@@ -179,9 +165,8 @@ Blockly.Blocks.display_tm1637_number={
 Blockly.Blocks.display_tm1637_print={
     init:function(){
         this.setColour(180);
-        this.appendDummyInput("")
-            .appendField("数码管TM1637")
-            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ');
+        this.appendValueInput("LED_OBJ")
+            .appendField("TM1637数码管");
         this.appendDummyInput("")
             .appendField("显示分隔符\":\"")
             .appendField(new Blockly.FieldCheckbox(true),"MODE");
@@ -196,9 +181,8 @@ Blockly.Blocks.display_tm1637_print={
 Blockly.Blocks.display_tm1637_ratio={
     init:function(){
         this.setColour(180);
-        this.appendDummyInput("")
-            .appendField("数码管TM1637")
-            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ');
+        this.appendValueInput("LED_OBJ")
+            .appendField("TM1637数码管");
         this.appendValueInput("NUM1",Number)
             .appendField("显示比例")
             .setCheck("Number");
@@ -214,9 +198,8 @@ Blockly.Blocks.display_tm1637_ratio={
 Blockly.Blocks.display_tm1637_temperature={
     init:function(){
         this.setColour(180);
-        this.appendDummyInput("")
-            .appendField("数码管TM1637")
-            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ');
+        this.appendValueInput("LED_OBJ")
+            .appendField("TM1637数码管");
         this.appendValueInput("TEMP",Number)
             .appendField("显示温度")
             .setCheck("Number");
@@ -231,11 +214,12 @@ Blockly.Blocks.display_tm1637_temperature={
 Blockly.Blocks.display_tm1637_clear={
     init:function(){
         this.setColour(180);
+        this.appendValueInput("LED_OBJ")
+            .appendField("TM1637数码管");
         this.appendDummyInput("")
-            .appendField("数码管TM1637")
-            .appendField(new Blockly.FieldTextInput('myled'), 'LED_OBJ')
             .appendField("清屏");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setInputsInline(true);
     }
 };

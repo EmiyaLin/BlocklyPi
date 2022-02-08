@@ -23,9 +23,18 @@ Blockly.Blocks.network_tcp_init={
     init:function(){
         this.setColour(0);
         this.appendDummyInput("")
-            .appendField("TCP客户端")
-            .appendField(new Blockly.FieldTextInput('tcp'),'TCP_OBJ')
-            .appendField("初始化");
+            .appendField("创建TCP客户端");
+        this.setOutput(true);
+    }
+};
+
+Blockly.Blocks.network_tcp_connect={
+    init:function(){
+        this.setColour(0);
+        this.appendValueInput("TCP_OBJ")
+            .appendField("TCP客户端");
+        this.appendDummyInput("")
+            .appendField("连接到");
         this.appendValueInput("HOST",String)
 			.appendField("主机地址")
             .setCheck("String");
@@ -34,29 +43,30 @@ Blockly.Blocks.network_tcp_init={
             .setCheck("Number");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setInputsInline(true);
     }
 };
 
 Blockly.Blocks.network_tcp_close={
     init:function(){
         this.setColour(0);
+        this.appendValueInput("TCP_OBJ")
+			.appendField("TCP客户端");
         this.appendDummyInput("")
-            .appendField("TCP客户端")
-            .appendField(new Blockly.FieldTextInput('tcp'),'TCP_OBJ')
             .appendField("关闭客户端");
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setInputsInline(true);
     }
 };
 
 Blockly.Blocks.network_tcp_recv={
     init:function(){
 	    this.setColour(0);
-	    this.appendDummyInput("")
-            .appendField("TCP客户端")
-            .appendField(new Blockly.FieldTextInput('tcp'),'TCP_OBJ')
-            .appendField("接收数据");
+	    this.appendValueInput("TCP_OBJ")
+			.appendField("TCP客户端");
         this.appendValueInput("SIZE",Number)
+            .appendField("接收数据")
             .setCheck("Number");
         this.appendDummyInput()
             .appendField("字节");
@@ -68,13 +78,13 @@ Blockly.Blocks.network_tcp_recv={
 Blockly.Blocks.network_tcp_send={
     init:function(){
 	    this.setColour(0);
-	    this.appendDummyInput("")
-            .appendField("TCP客户端")
-            .appendField(new Blockly.FieldTextInput('tcp'),'TCP_OBJ');
-        this.appendValueInput("DATA")
+	    this.appendValueInput("TCP_OBJ")
+			.appendField("TCP客户端");
+        this.appendValueInput("DATA",String)
             .appendField("发送数据")
             .setCheck("String");
         this.setPreviousStatement(true);
-	    this.setNextStatement(true);
+        this.setNextStatement(true);
+        this.setInputsInline(true);
     }
 };
