@@ -34,7 +34,7 @@ ADS1115电压传感器的驱动库在python_libraries/ads1115目录下
 
 
 #### 实际使用
-详见 [http://hgcserver.gitee.io/blocklypi/apps/blocklypi/index.html](http://hgcserver.gitee.io/blocklypi/apps/blocklypi/index.html)
+详见 [http://hvwyl.gitee.io/BlocklyPi/apps/blocklypi/index.html](http://hvwyl.gitee.io/BlocklyPi/apps/blocklypi/index.html)
 ![PIC1](images/pic1.png)
 ![PIC2](images/pic2.png)
 
