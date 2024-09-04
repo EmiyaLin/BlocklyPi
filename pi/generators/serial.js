@@ -53,5 +53,5 @@ Blockly.Python.serial_write=function(){
 	Blockly.Python.definitions_['import serial'] = 'import serial';
 	var SER_OBJ=Blockly.Python.valueToCode(this,'SER_OBJ',Blockly.Python.ORDER_ATOMIC);
 	var DATA=Blockly.Python.valueToCode(this,'DATA',Blockly.Python.ORDER_ATOMIC);
-	return SER_OBJ+".write("+DATA+")\n";
+	return SER_OBJ+".write("+DATA+".encode('utf-8'))\n";
 };

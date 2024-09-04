@@ -24,6 +24,7 @@
   <script src="../../pi/blocks/device.js"></script>
   <script src="../../pi/blocks/utils.js"></script>
   <script src="../../pi/blocks/factory.js"></script>
+  <script src="../../pi/blocks/move.js"></script>
   <!--Pi generators Lib-->
   <script src="../../pi/generators/inout.js"></script>
   <script src="../../pi/generators/pwm.js"></script>
@@ -37,7 +38,8 @@
   <script src="../../pi/generators/device.js"></script>
   <script src="../../pi/generators/utils.js"></script>
   <script src="../../pi/generators/factory.js"></script>
-
+  <script src="../../pi/generators/move.js"></script>
+  
   <script src="code.js"></script>
   
   <script type="text/javascript" src="Blob.js"></script>
@@ -1116,6 +1118,11 @@
       <block type="factory_do"></block>
       <block type="factory_block"></block>
       <block type="factory_var"></block>
+    </category>
+    <category name="小车控制" colour="120">
+      <block type="setup_uart_block"></block>
+      <block type="car_run"></block>
+      <block type="car_stop"></block>
     </category>
   </xml>
 
