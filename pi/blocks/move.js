@@ -10,6 +10,7 @@ Blockly.Blocks['setup_uart_block'] = {
         this.setHelpUrl("");
     }
 };
+
 Blockly.Blocks['car_run'] = {
     init: function () {
         this.appendDummyInput()

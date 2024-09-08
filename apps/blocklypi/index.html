@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="google" value="notranslate">
   <title>BlocklyPi</title>
-  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="style.css">
   <script src="../../blockly_compressed.js"></script>
   <script src="../../blocks_compressed.js"></script>
   <script src="../../python_compressed.js"></script>
-  
+
   <script src="../../pi/define_pins.js"></script>
-  
+
   <!--Pi blocks Lib-->
   <script src="../../pi/blocks/inout.js"></script>
   <script src="../../pi/blocks/pwm.js"></script>
@@ -25,6 +26,7 @@
   <script src="../../pi/blocks/utils.js"></script>
   <script src="../../pi/blocks/factory.js"></script>
   <script src="../../pi/blocks/move.js"></script>
+  <script src="../../pi/blocks/control.js"></script>
   <!--Pi generators Lib-->
   <script src="../../pi/generators/inout.js"></script>
   <script src="../../pi/generators/pwm.js"></script>
@@ -39,14 +41,16 @@
   <script src="../../pi/generators/utils.js"></script>
   <script src="../../pi/generators/factory.js"></script>
   <script src="../../pi/generators/move.js"></script>
-  
+  <script src="../../pi/generators/control.js"></script>
+
   <script src="code.js"></script>
-  
+
   <script type="text/javascript" src="Blob.js"></script>
   <script type="text/javascript" src="spin.js"></script>
   <script type="text/javascript" src="FileSaver.min.js"></script>
   <script type="text/javascript" src="blockly_helper.js"></script>
 </head>
+
 <body>
   <table width="100%" height="100%">
     <tr>
@@ -69,11 +73,12 @@
             <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" class="taboff">XML</td>
             <td class="tabmax">
-            <button onclick="saveCode()">保存为Python代码</button>
-            <button onclick="save()">保存为XML文件</button>
-            <button id="fakeload">从XML文件读取</button>
-            <input type="file" id="load" style="display: none;"/>
-            <button id="trashButton" class="notext" title="..."><img src='../../media/1x1.gif' class="trash icon21"></button>
+              <button onclick="saveCode()">保存为Python代码</button>
+              <button onclick="save()">保存为XML文件</button>
+              <button id="fakeload">从XML文件读取</button>
+              <input type="file" id="load" style="display: none;" />
+              <button id="trashButton" class="notext" title="..."><img src='../../media/1x1.gif'
+                  class="trash icon21"></button>
 
 
             </td>
@@ -388,7 +393,6 @@
     <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
     <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
     <sep></sep>
-    
     <category name="输入/输出" colour="20">
       <block type="inout_pins"></block>
       <block type="inout_mode">
@@ -475,25 +479,25 @@
     </category>
     <category name="延时" colour="120">
       <block type="time_delay">
-          <value name="DELAY_TIME">
-            <shadow type="math_number">
-               <field name="NUM">1</field>
-            </shadow>
-         </value>
+        <value name="DELAY_TIME">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
       </block>
       <block type="time_delay_ms">
-          <value name="DELAY_TIME">
-            <shadow type="math_number">
-               <field name="NUM">10</field>
-            </shadow>
-         </value>
+        <value name="DELAY_TIME">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
       </block>
       <block type="time_delay_us">
-          <value name="DELAY_TIME">
-            <shadow type="math_number">
-               <field name="NUM">10</field>
-            </shadow>
-         </value>
+        <value name="DELAY_TIME">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
       </block>
     </category>
     <category name="控制台" colour="230">
@@ -984,125 +988,15 @@
         </value>
       </block>
     </category>
+
     <category name="外部设备" colour="100">
-      <block type="device_dht11">
-        <value name="PIN">
-          <shadow type="inout_pins">
-            <field name="PIN">7</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="device_bmp180">
-        <value name="BUS">
-          <shadow type="factory_var">
-            <field name="VALUE">1</field>
-          </shadow>
-        </value>
-        <value name="BMP180_ADDR">
-          <shadow type="factory_var">
-            <field name="VALUE">0x77</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="device_hcsr04_distance">
-        <value name="TRIG">
-          <shadow type="inout_pins">
-            <field name="PIN">7</field>
-          </shadow>
-        </value>
-        <value name="ECHO">
-          <shadow type="inout_pins">
-            <field name="PIN">11</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="device_ads1115">
-        <value name="BUS">
-          <shadow type="factory_var">
-            <field name="VALUE">1</field>
-          </shadow>
-        </value>
-        <value name="ADS1115_ADDR">
-          <shadow type="factory_var">
-            <field name="VALUE">0x48</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="variables_set">
-        <field name="VAR">stepper</field>
-        <value name="VALUE">
-          <block type="device_stepper_init">
-            <value name="PIN1">
-              <block type="inout_pins">
-                <field name="PIN">31</field>
-              </block>
-            </value>
-            <value name="PIN2">
-              <block type="inout_pins">
-                <field name="PIN">33</field>
-              </block>
-            </value>
-            <value name="PIN3">
-              <block type="inout_pins">
-                <field name="PIN">35</field>
-              </block>
-            </value>
-            <value name="PIN4">
-              <block type="inout_pins">
-                <field name="PIN">37</field>
-              </block>
-            </value>
-            <value name="STEPS">
-              <block type="math_number">
-                <field name="NUM">100</field>
-              </block>
-            </value>
-          </block>
-        </value>
-      </block>
-      <block type="device_stepper_speed">
-        <value name="STEPPER_OBJ">
-          <block type="variables_get">
-            <field name="VAR">stepper</field>
-          </block>
-        </value>
-        <value name="SPEED">
-          <shadow type="math_number">
-            <field name="NUM">50</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="device_stepper_step">
-        <value name="STEPPER_OBJ">
-          <block type="variables_get">
-            <field name="VAR">stepper</field>
-          </block>
-        </value>
-        <value name="STEPS">
-          <shadow type="math_number">
-            <field name="NUM">500</field>
-          </shadow>
-        </value>
-      </block>
-      <block type="device_beep">
-        <value name="PIN">
-          <shadow type="inout_pins">
-            <field name="PIN">7</field>
-          </shadow>
-        </value>
-        <value name="FREQ">
-          <shadow type="math_number">
-            <field name="NUM">220</field>
-          </shadow>
-        </value>
-        <value name="TIME">
-          <shadow type="math_number">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-      </block>
+      <block type="ultrasonic_sensor_setup"></block>
+      <block type="ultrasonic_sensor_distance"></block>
+      <block type="button_stop_program"></block>
     </category>
-    
+    <category name="控制结构" colour="230">
+      <block type="try_except_block"></block>
+    </category>    
     <sep></sep>
     <category name="Utils" colour="75">
       <block type="utils_now"></block>
@@ -1127,4 +1021,5 @@
   </xml>
 
 </body>
+
 </html>

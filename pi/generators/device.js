@@ -1,91 +1,71 @@
-Blockly.Python.device_dht11=function(){
-    Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
-    Blockly.Python.definitions_['import dht11'] = 'import dht11';
-    var pin=Blockly.Python.valueToCode(this,'PIN',Blockly.Python.ORDER_ATOMIC)||1;
-    var mode=this.getFieldValue("MODE");
-    return ["dht11.get"+mode+"("+pin+")",Blockly.Python.ORDER_ATOMIC];
-};
+Blockly.Python['ultrasonic_sensor_setup'] = function (block) {
+    var trig = block.getFieldValue('TRIG');
+    var echo = block.getFieldValue('ECHO');
 
-Blockly.Python.device_bmp180=function(){
-    Blockly.Python.definitions_['import bmp180'] = 'import bmp180';
-    var bus=Blockly.Python.valueToCode(this,'BUS',Blockly.Python.ORDER_ATOMIC);
-    var bmp180_addr=Blockly.Python.valueToCode(this,'BMP180_ADDR',Blockly.Python.ORDER_ATOMIC);
-    var mode=this.getFieldValue("MODE");
-    return ["bmp180.get"+mode+"("+bus+","+bmp180_addr+")",Blockly.Python.ORDER_ATOMIC];
-};
+    // 导入必要的模块
+    Blockly.Python.definitions_['import_RPi.GPIO'] = 'import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)';
+    Blockly.Python.definitions_['import_time'] = 'import time';
 
-Blockly.Python.device_hcsr04_distance=function(){
-    Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
-    Blockly.Python.definitions_['import time'] = 'import time';
-    const functionName=Blockly.Python.provideFunction_('hcsr04_distance',[
-        'def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(Trig,Echo):',
-        '  GPIO.setup(Trig,GPIO.OUT)',
-        '  GPIO.setup(Echo,GPIO.IN)',
-        '  GPIO.output(Trig,GPIO.HIGH)',
-        '  time.sleep(0.000015)',
-        '  GPIO.output(Trig,GPIO.LOW)',
-        '  while not GPIO.input(Echo):',
-        '    pass',
-        '  t1=time.time()',
-        '  while GPIO.input(Echo):',
-        '    pass',
-        '  t2=time.time()',
-        '  return (t2-t1)*34000/2'
+    // 定义setup_sensor函数
+    var code = `
+def setup_sensor(TRIG_PIN, ECHO_PIN):
+    global TRIG, ECHO
+    TRIG = TRIG_PIN
+    ECHO = ECHO_PIN
+    GPIO.setup(TRIG, GPIO.OUT, initial=0)
+    GPIO.setup(ECHO, GPIO.IN, pull_up_down=GPIO.PUD_UP)\n\n`;
+
+    // 返回初始化的调用
+    code += 'setup_sensor(' + trig + ', ' + echo + ')\n';
+    return code;
+};
+Blockly.Python['ultrasonic_sensor_distance'] = function (block) {
+
+    // 定义distance函数
+    var functionName = Blockly.Python.provideFunction_('distance', [
+        'def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '():',
+        '    global TRIG, ECHO',
+        '    GPIO.output(TRIG, 0)',
+        '    time.sleep(0.000002)',
+        '    GPIO.output(TRIG, 1)',
+        '    time.sleep(0.00001)',
+        '    GPIO.output(TRIG, 0)',
+        '    while GPIO.input(ECHO) == 0:',
+        '        pass',
+        '    time1 = time.time()',
+        '    while GPIO.input(ECHO) == 1:',
+        '        pass',
+        '    time2 = time.time()',
+        '    during = time2 - time1',
+        '    dis = during * 340 / 2 * 100',
+        '    if dis > 999:',
+        '        return 500',
+        '    return dis'
     ]);
-    var trig=Blockly.Python.valueToCode(this,'TRIG',Blockly.Python.ORDER_ATOMIC)||1;
-    var echo=Blockly.Python.valueToCode(this,'ECHO',Blockly.Python.ORDER_ATOMIC)||1;
-    return [functionName+"("+trig+","+echo+")",Blockly.Python.ORDER_ATOMIC];
-};
 
-Blockly.Python.device_ads1115=function(){
-    Blockly.Python.definitions_['import ads1115'] = 'import ads1115';
-    var bus=Blockly.Python.valueToCode(this,'BUS',Blockly.Python.ORDER_ATOMIC);
-    var ads1115_addr=Blockly.Python.valueToCode(this,'ADS1115_ADDR',Blockly.Python.ORDER_ATOMIC);
-    var channel=this.getFieldValue("CHANNEL");
-    return ["ads1115.ADS1115_analogRead("+bus+","+ads1115_addr+","+channel+")",Blockly.Python.ORDER_ATOMIC];
+    // 返回测距函数调用
+    var code = functionName + '()';
+    return [code, Blockly.Python.ORDER_ATOMIC];
 };
-
-Blockly.Python.device_stepper_init=function(){
-    Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
-    Blockly.Python.definitions_['from stepper import Stepper'] = 'from stepper import Stepper';
-    var pin1=Blockly.Python.valueToCode(this,'PIN1',Blockly.Python.ORDER_ATOMIC)||1;
-    var pin2=Blockly.Python.valueToCode(this,'PIN2',Blockly.Python.ORDER_ATOMIC)||1;
-    var pin3=Blockly.Python.valueToCode(this,'PIN3',Blockly.Python.ORDER_ATOMIC)||1;
-    var pin4=Blockly.Python.valueToCode(this,'PIN4',Blockly.Python.ORDER_ATOMIC)||1;
-    var steps=Blockly.Python.valueToCode(this,'STEPS',Blockly.Python.ORDER_ATOMIC)||1;
-    var speed=Blockly.Python.valueToCode(this,'SPEED',Blockly.Python.ORDER_ATOMIC)||1;
-    return ["Stepper("+steps+","+pin1+","+pin2+","+pin3+","+pin4+")",Blockly.Python.ORDER_ATOMIC];
-};
-
-Blockly.Python.device_stepper_speed=function(){
-    Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
-    Blockly.Python.definitions_['from stepper import Stepper'] = 'from stepper import Stepper';
-    var STEPPER_OBJ=Blockly.Python.valueToCode(this,'STEPPER_OBJ',Blockly.Python.ORDER_ATOMIC);
-    var steps=Blockly.Python.valueToCode(this,'SPEED',Blockly.Python.ORDER_ATOMIC)||1;
-    return STEPPER_OBJ+".setSpeed("+steps+")\n";
-};
-
-Blockly.Python.device_stepper_step=function(){
-    Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
-    Blockly.Python.definitions_['from stepper import Stepper'] = 'from stepper import Stepper';
-    var STEPPER_OBJ=Blockly.Python.valueToCode(this,'STEPPER_OBJ',Blockly.Python.ORDER_ATOMIC);
-    var steps=Blockly.Python.valueToCode(this,'STEPS',Blockly.Python.ORDER_ATOMIC)||1;
-    return STEPPER_OBJ+".step("+steps+")\n";
-};
-
-Blockly.Python.device_beep=function(){
-    Blockly.Python.definitions_['import RPi.GPIO as GPIO'] = "import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)";
-    Blockly.Python.definitions_['import time'] = 'import time';
-    const functionName=Blockly.Python.provideFunction_('beep',[
-        'def ' + Blockly.Python.FUNCTION_NAME_PLACEHOLDER_ + '(pin,f,t):',
-        '  GPIO.setup(pin,GPIO.OUT)',
-        '  pwm=GPIO.PWM(pin,f)',
-        '  pwm.start(50)',
-        '  time.sleep(t)',
-        '  pwm.stop()'
-    ]);
-    var pin=Blockly.Python.valueToCode(this,'PIN',Blockly.Python.ORDER_ATOMIC)||1;
-    var freq=Blockly.Python.valueToCode(this,'FREQ',Blockly.Python.ORDER_ATOMIC)||1;
-    var time=Blockly.Python.valueToCode(this,'TIME',Blockly.Python.ORDER_ATOMIC)||1;
-    return functionName+"("+pin+","+freq+","+time+")\n";
-};
+Blockly.Python['button_stop_program'] = function(block) {
+    var button_pin = block.getFieldValue('BUTTON_PIN');
+  
+    // 导入必要的模块
+    Blockly.Python.definitions_['import_RPi.GPIO'] = 'import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)';
+    Blockly.Python.definitions_['import_time'] = 'import time';
+  
+    // 定义按键检测函数
+    var code = `
+  GPIO.setup(${button_pin}, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  
+  def button_stop_program():
+      while True:
+          if GPIO.input(${button_pin}) == GPIO.LOW:
+              print("程序终止")
+              GPIO.cleanup()
+              break
+          time.sleep(0.1)
+  `;
+    return code;
+  };
+  
