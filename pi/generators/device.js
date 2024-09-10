@@ -3,7 +3,7 @@ Blockly.Python['ultrasonic_sensor_setup'] = function (block) {
     var echo = block.getFieldValue('ECHO');
 
     // 导入必要的模块
-    Blockly.Python.definitions_['import_RPi.GPIO'] = 'import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BOARD)\nGPIO.setwarnings(False)';
+    Blockly.Python.definitions_['import_RPi.GPIO'] = 'import RPi.GPIO as GPIO\nGPIO.setmode(GPIO.BCM)\nGPIO.setwarnings(False)';
     Blockly.Python.definitions_['import_time'] = 'import time';
 
     // 定义setup_sensor函数
